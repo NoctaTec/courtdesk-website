@@ -286,9 +286,9 @@
 
   /* Video im Hero */
   .frame-wrap { margin: 0; transform: none; }
-  .frame { cursor: default; padding: .9rem .9rem 3.4rem; }
+  .frame { cursor: default; padding: .9rem; }
   .frame video { display: block; width: 100%; height: auto; aspect-ratio: 608 / 1080; background: #000; border: 1px solid var(--white); position: relative; }
-  .frame .tag { line-height: 1.45; }
+  .frame .tag { position: relative; left: auto; right: auto; bottom: auto; margin: .9rem 0 0; padding: .55rem .7rem; line-height: 1.45; background: #050505; border: 1px solid var(--rule); }
 
   /* Kontakt immer erreichbar */
   .head-cta { display: none; }
@@ -349,7 +349,7 @@
             <source src="courtdesk-demo.mp4" type="video/mp4">
             Dein Browser kann das Video nicht abspielen. <a href="courtdesk-demo.mp4">Video herunterladen</a>
           </video>
-          <figcaption class="tag">Echte Aufnahme vom Handy, knapp eine Minute, ohne Ton. Der Demo-Club ist keine echte Anlage.</figcaption>
+          <figcaption class="tag">Echte Aufnahme vom Handy, ohne Ton. Demo-Club, keine echte Anlage.</figcaption>
         </div>
       </figure>
     </div>
