@@ -3,8 +3,22 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CourtDesk – WhatsApp-Assistent für Padel-, Tennis- und Pickleballanlagen</title>
-<meta name="description" content="CourtDesk schaltet Wellpass- und Hansefit-Mitglieder per WhatsApp frei, bereitet die Anmeldungen als fertige Playtomic-Importdatei vor und beantwortet Standardfragen. Spart Anlagen jeden Monat Stunden. Ein Produkt von NoctaTec.">
+<title>CourtDesk – Wellpass und Hansefit per WhatsApp für Padelhallen</title>
+<meta name="description" content="WhatsApp-Assistent für Padel-, Tennis- und Pickleballanlagen: Wellpass- und Hansefit-Mitglieder melden sich selbst an, die Daten kommen vorbereitet für Playtomic. Standardfragen beantwortet er rund um die Uhr.">
+<link rel="canonical" href="https://www.courtdesk.de/">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="CourtDesk">
+<meta property="og:url" content="https://www.courtdesk.de/">
+<meta property="og:title" content="CourtDesk – Wellpass und Hansefit per WhatsApp">
+<meta property="og:description" content="Spieler melden sich selbst an, deine Anlage bekommt die Daten für Playtomic. Mit echtem Demo-Video.">
+<meta property="og:image" content="https://www.courtdesk.de/courtdesk-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="CourtDesk: WhatsApp-Chat, in dem sich ein Spieler für Wellpass anmeldet">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://www.courtdesk.de/#org", "name": "CourtDesk", "url": "https://www.courtdesk.de/", "email": "leon@courtdesk.de", "parentOrganization": {"@type": "Organization", "name": "NoctaTec", "url": "https://noctatec.de/"}}, {"@type": "Service", "name": "CourtDesk WhatsApp-Assistent", "serviceType": "WhatsApp-Assistent für Sportanlagen", "description": "Anmeldung von Wellpass-, Hansefit- und Epassi-Mitgliedern per WhatsApp, vorbereitet für den Playtomic-Import, und Antworten auf Standardfragen.", "provider": {"@id": "https://www.courtdesk.de/#org"}, "areaServed": {"@type": "Country", "name": "Deutschland"}, "audience": {"@type": "BusinessAudience", "audienceType": "Betreiber von Padel-, Tennis- und Pickleballanlagen"}}]}</script>
 <meta name="theme-color" content="#000000">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23000'/%3E%3Crect x='9' y='4' width='14' height='24' fill='none' stroke='%23fff' stroke-width='2.6'/%3E%3Cline x1='5' y1='16' x2='27' y2='16' stroke='%23ff4d2e' stroke-width='3'/%3E%3C/svg%3E">
 <style>
@@ -269,6 +283,28 @@
   .legal h3 { font: 700 1rem/1.3 var(--sans); letter-spacing: 0; text-transform: none; margin: 1.4rem 0 .35rem; }
   .legal p { margin: 0 0 .8rem; }
   footer .tm { max-width: 80ch; margin: 1.8rem 0 0; }
+
+  /* Video im Hero */
+  .frame-wrap { margin: 0; transform: none; }
+  .frame { cursor: default; padding: .9rem .9rem 3.4rem; }
+  .frame video { display: block; width: 100%; height: auto; aspect-ratio: 608 / 1080; background: #000; border: 1px solid var(--white); position: relative; }
+  .frame .tag { line-height: 1.45; }
+
+  /* Kontakt immer erreichbar */
+  .head-cta { display: none; }
+  @media (min-width: 700px) {
+    .head-cta { display: inline-block; padding: .7rem 1.1rem; font-size: .72rem; }
+    header.top .wrap { flex-wrap: nowrap; }
+  }
+  .dock { position: fixed; left: 0; right: 0; bottom: 0; z-index: 15; display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    padding: .75rem clamp(1.25rem, 4vw, 2.5rem) calc(.75rem + env(safe-area-inset-bottom, 0px)); background: rgba(0, 0, 0, .94); border-top: 1px solid var(--rule);
+    -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); transform: translateY(110%); transition: transform .25s ease; }
+  .dock.on { transform: none; }
+  .dock span { font-size: .9rem; line-height: 1.3; color: var(--ink); }
+  .dock .btn { flex: none; padding: .85rem 1.1rem; font-size: .75rem; }
+  @media (min-width: 700px) { .dock { display: none; } }
+  @media (max-width: 699px) { footer { padding-bottom: 6rem; } }
+  @media (prefers-reduced-motion: reduce) { .dock { transition: none; } }
 </style>
 </head>
 <body>
@@ -288,6 +324,7 @@
       <a href="#roadmap">Roadmap</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
+    <a class="btn head-cta" href="mailto:leon@courtdesk.de?subject=15-Minuten-Gespr%C3%A4ch%20zu%20CourtDesk">Gespräch anfragen</a>
   </div>
 </header>
 
@@ -298,63 +335,26 @@
     <div class="wrap">
       <div class="copy">
         <h1 id="titel">Weniger Tipparbeit. Mehr Zeit für deine Anlage.</h1>
-        <p class="lead">CourtDesk ist ein WhatsApp-Assistent für Padel-, Tennis- und Pickleballanlagen. Er beantwortet Standardfragen, auch nachts und am Wochenende, schaltet Wellpass- und Hansefit-Mitglieder frei und bereitet die Anmeldungen als fertige Playtomic-Importdatei vor. So bleibt Zeit für die Spieler vor Ort.</p>
+        <p class="lead">CourtDesk ist ein WhatsApp-Assistent für Padel-, Tennis- und Pickleballanlagen. Er beantwortet Standardfragen, auch nachts und am Wochenende, nimmt die Anmeldungen von Wellpass- und Hansefit-Mitgliedern entgegen und bereitet sie für den Import in Playtomic vor. So bleibt Zeit für die Spieler vor Ort.</p>
         <div class="actions">
-          <a class="btn" href="#rechner">Ersparnis berechnen</a>
-          <a class="textlink" href="#video">Beispiel ansehen</a>
+          <a class="btn" href="mailto:leon@courtdesk.de?subject=15-Minuten-Gespr%C3%A4ch%20zu%20CourtDesk">15-Minuten-Gespräch</a>
+          <a class="textlink" href="#rechner">Ersparnis berechnen</a>
         </div>
         <p class="save"><b id="hero-h">ca. 10 Stunden pro Monat</b><span id="hero-e">rund 450 € Arbeitszeit</span> gewinnt eine Anlage in unserer Beispielrechnung zurück, bei 15 Anmeldungen pro Woche und 10 Fragen am Tag. <a href="#rechner">Mit deinen Zahlen rechnen</a></p>
       </div>
 
-      <div class="frame-wrap">
-        <div class="frame play" id="frame" title="Antippen, um den Aufbau neu zu starten">
-          <svg class="court" viewBox="0 0 330 440" role="img" aria-label="Technische Zeichnung eines Padelplatzes mit Maßen: 10 mal 20 Meter, Netz in der Mitte, Aufschlaglinien 6,95 Meter vom Netz">
-            <g fill="none" stroke="#f4f5f6" stroke-width="1.6" stroke-linecap="square">
-              <rect class="l" pathLength="1" x="90" y="70" width="150" height="300" style="--d:.3s"/>
-              <line class="l" pathLength="1" x1="90" y1="166" x2="240" y2="166" style="--d:1.2s"/>
-              <line class="l" pathLength="1" x1="90" y1="274" x2="240" y2="274" style="--d:1.4s"/>
-              <line class="l" pathLength="1" x1="165" y1="166" x2="165" y2="274" style="--d:1.65s"/>
-            </g>
-            <line class="l" pathLength="1" x1="72" y1="220" x2="258" y2="220" stroke="#ff4d2e" stroke-width="3" style="--d:2s"/>
-            <g fill="none" stroke="#8a9298" stroke-width="1">
-              <line class="l" pathLength="1" x1="56" y1="70" x2="56" y2="370" style="--d:.1s"/>
-              <line class="fade" x1="50" y1="70" x2="62" y2="70" style="--d:1s"/><line class="fade" x1="50" y1="370" x2="62" y2="370" style="--d:1s"/>
-              <line class="l" pathLength="1" x1="90" y1="44" x2="240" y2="44" style="--d:.1s"/>
-              <line class="fade" x1="90" y1="38" x2="90" y2="50" style="--d:1s"/><line class="fade" x1="240" y1="38" x2="240" y2="50" style="--d:1s"/>
-              <line class="fade" x1="240" y1="166" x2="288" y2="166" style="--d:2.3s"/><line class="fade" x1="240" y1="220" x2="288" y2="220" style="--d:2.3s"/><line class="fade" x1="240" y1="274" x2="288" y2="274" style="--d:2.3s"/>
-            </g>
-            <g class="fade" style="--d:2.4s">
-              <text x="140" y="34">10 M</text>
-              <text transform="translate(40 228) rotate(-90)">20 M</text>
-              <text x="292" y="169">6,95 M</text>
-              <text x="292" y="223" style="fill:#ff4d2e">NETZ</text>
-              <text x="292" y="277">6,95 M</text>
-            </g>
-            <circle class="pl" cx="127" cy="108" r="6" style="--d:2.6s"/>
-            <circle class="pl" cx="203" cy="108" r="6" style="--d:2.7s"/>
-            <circle class="pl" cx="127" cy="332" r="6" style="--d:2.8s"/>
-            <circle class="pl" cx="203" cy="332" r="6" style="--d:2.9s"/>
-          </svg>
-          <div class="scan" aria-hidden="true"></div>
-          <p class="tag">Padelplatz, Maßzeichnung. Antippen für Neustart</p>
+      <figure class="frame-wrap" id="video">
+        <div class="frame">
+          <video controls preload="metadata" playsinline poster="courtdesk-demo-poster.jpg" aria-label="Bildschirmaufnahme: Ein Spieler meldet sich per WhatsApp für Wellpass an und fragt nach dem Preis">
+            <source src="courtdesk-demo.mp4" type="video/mp4">
+            Dein Browser kann das Video nicht abspielen. <a href="courtdesk-demo.mp4">Video herunterladen</a>
+          </video>
+          <figcaption class="tag">Echte Aufnahme vom Handy, knapp eine Minute, ohne Ton. Der Demo-Club ist keine echte Anlage.</figcaption>
         </div>
-      </div>
+      </figure>
     </div>
   </section>
 
-  <section id="video" class="graphite" aria-labelledby="video-titel">
-    <div class="wrap video-wrap">
-      <div class="video-copy">
-        <h2 id="video-titel">So erleben es deine Spieler</h2>
-        <p class="sub">Eine echte Aufnahme vom Handy, knapp zwei Minuten: Anmeldung per WhatsApp, eine freie Frage und die Rabattrechnung. Der Club im Video ist der Demo-Club, keine echte Anlage.</p>
-        <a class="btn ghost" href="mailto:leon@courtdesk.de?subject=15-Minuten-Gespr%C3%A4ch%20zu%20CourtDesk">15-Minuten-Gespräch</a>
-      </div>
-      <video controls preload="metadata" playsinline poster="courtdesk-demo-poster.jpg" aria-label="Bildschirmaufnahme: Ein Spieler meldet sich per WhatsApp für Wellpass an und fragt nach dem Preis">
-        <source src="courtdesk-demo.mp4" type="video/mp4">
-        Dein Browser kann das Video nicht abspielen. <a href="courtdesk-demo.mp4">Video herunterladen</a>
-      </video>
-    </div>
-  </section>
 
   <div class="band">
     <div class="wrap">
@@ -423,7 +423,7 @@
           <div class="tabs" role="tablist" aria-label="Anwendungsfälle">
             <button class="tab" role="tab" id="t1" aria-controls="p1" aria-selected="true" type="button"><b>Mitgliedschaft freischalten</b><span>Wellpass, Hansefit/Epassi</span></button>
             <button class="tab" role="tab" id="t2" aria-controls="p2" aria-selected="false" tabindex="-1" type="button"><b>Fragen beantworten</b><span>Rund um die Uhr</span></button>
-            <button class="tab" role="tab" id="t3" aria-controls="p3" aria-selected="false" tabindex="-1" type="button"><b>Übergabe ans Team</b><span class="soon">In Entwicklung</span></button>
+            <button class="tab" role="tab" id="t3" aria-controls="p3" aria-selected="false" tabindex="-1" type="button"><b>Übergabe ans Team</b><span class="soon">Zum Pilotstart</span></button>
             <button class="tab" role="tab" id="t4" aria-controls="p4" aria-selected="false" tabindex="-1" type="button"><b>Freie Plätze und Preise</b><span class="soon">In Entwicklung</span></button>
             <button class="tab" role="tab" id="t5" aria-controls="p5" aria-selected="false" tabindex="-1" type="button"><b>Rabatte und Check-in</b><span>Je nach Mitgliedschaft</span></button>
           </div>
@@ -467,7 +467,7 @@ Max Mustermann,max@mail.de,,,,Wellpass,</pre>
               <p class="msg bot">Ja, Umkleiden und Duschen sind im Erdgeschoss, Handtücher bringst du bitte selbst mit.</p>
             </div>
 
-            <div class="chat" role="tabpanel" id="p3" aria-labelledby="t3" hidden data-benefit="<b>Nutzen für die Anlage:</b> Sonderfälle kommen vollständig und gebündelt beim Team an. Keine Rückfragen, kein vergessener Rückruf. Diese Funktion ist in Entwicklung.">
+            <div class="chat" role="tabpanel" id="p3" aria-labelledby="t3" hidden data-benefit="<b>Nutzen für die Anlage:</b> Sonderfälle kommen vollständig und gebündelt beim Team an. Keine Rückfragen, kein vergessener Rückruf. Diese Funktion kommt zum Pilotstart.">
               <p class="msg me">Wir wollen am Freitag mit 20 Leuten spielen. Geht das?</p>
               <p class="msg bot">Gute Idee! Gruppen plant bei uns Jana aus dem Team. Damit sie direkt ein Angebot machen kann: Ab wann wollt ihr spielen, und wie lange?</p>
               <p class="msg me">Ab 18 Uhr, so zwei Stunden</p>
@@ -524,7 +524,7 @@ Antwort per WhatsApp an +49 171 …</pre>
           <p class="days" id="r-d"></p>
           <p class="eur" id="r-e">0 €</p>
           <p class="offer"><a href="#kontakt">Lass uns prüfen, ob das bei dir hinkommt</a></p>
-          <p class="note">Modellrechnung mit Beispielwerten, keine Garantie. Stundensatz Geschäftsführung: Durchschnitt in Kleinstunternehmen laut Datev-Auswertung 2026. Empfang: Mindestlohn plus Arbeitgeberanteil, gerundet.</p>
+          <p class="note">Modellrechnung mit Beispielwerten, keine Garantie. Stundensatz Geschäftsführung: rund 45 €, Durchschnitt in Kleinstunternehmen laut Datev-Auswertung 2025. Empfang: Mindestlohn 13,90 € plus Abgaben für einen Minijob, gerundet.</p>
         </div>
       </div>
     </div>
@@ -537,23 +537,23 @@ Antwort per WhatsApp an +49 171 …</pre>
         <div class="now">
           <h3>Verfügbar</h3>
           <ul>
-            <li>Freischaltung für Wellpass und Hansefit/Epassi im Chat</li>
+            <li>Anmeldung für Wellpass und Hansefit/Epassi im Chat, mit Prüfung von Name, E-Mail und TAN-Format</li>
             <li>Antworten auf Standardfragen aus den Infos deiner Anlage</li>
             <li>Persönliche Antwort zu Rabatt und Check-in je nach Mitgliedschaft</li>
           </ul>
         </div>
         <div class="next">
-          <h3>In Entwicklung</h3>
+          <h3>Zum Pilotstart</h3>
           <ul>
             <li>Täglicher Versand der Importdatei für Playtomic, mit TAN-Liste</li>
             <li>Übergabe an dein Team bei Sonderfällen</li>
-            <li>Freie Plätze und Preise direkt im Chat, mit Link zur Buchung</li>
           </ul>
         </div>
         <div>
-          <h3>Danach</h3>
+          <h3>In Entwicklung</h3>
           <ul>
-            <li>Monatsbericht: Anmeldungen, häufigste Fragen, gesparte Zeit</li>
+            <li>Freie Plätze und Preise direkt im Chat, mit Link zur Buchung</li>
+            <li>Auswertung für deine Anlage: Anmeldungen, häufigste Fragen, gesparte Zeit</li>
             <li>Antworten auf Englisch</li>
           </ul>
         </div>
@@ -575,6 +575,11 @@ Antwort per WhatsApp an +49 171 …</pre>
     </div>
   </section>
 </main>
+
+<div class="dock" id="dock" aria-hidden="true">
+  <span>Startangebot: Einrichtung kostenlos</span>
+  <a class="btn" href="mailto:leon@courtdesk.de?subject=15-Minuten-Gespr%C3%A4ch%20zu%20CourtDesk" tabindex="-1">15-Min.-Gespräch</a>
+</div>
 
 <footer id="rechtliches">
   <div class="wrap">
@@ -639,13 +644,21 @@ Antwort per WhatsApp an +49 171 …</pre>
   window.addEventListener('resize', onScroll);
   onScroll();
 
-  // Platz neu aufbauen
-  var frame = document.getElementById('frame');
-  frame.addEventListener('click', function () {
-    frame.classList.remove('play');
-    void frame.offsetWidth;
-    frame.classList.add('play');
-  });
+  // Leiste unten: sichtbar, sobald die Hero-Buttons weg sind, aus beim Kontaktbereich
+  var dock = document.getElementById('dock');
+  if ('IntersectionObserver' in window) {
+    var heroGone = false, contactIn = false;
+    function syncDock() {
+      var on = heroGone && !contactIn;
+      dock.classList.toggle('on', on);
+      dock.setAttribute('aria-hidden', on ? 'false' : 'true');
+      dock.querySelector('a').tabIndex = on ? 0 : -1;
+    }
+    new IntersectionObserver(function (e) { heroGone = !e[0].isIntersecting && e[0].boundingClientRect.top < 0; syncDock(); })
+      .observe(document.querySelector('.hero .actions'));
+    new IntersectionObserver(function (e) { contactIn = e.some(function (x) { return x.isIntersecting; }); syncDock(); })
+      .observe(document.getElementById('kontakt'));
+  }
 
   // Tabs und Chat-Abspielen
   var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
