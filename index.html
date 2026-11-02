@@ -399,6 +399,27 @@ header.top.small .brand { letter-spacing: -.01em; }
 @media (prefers-reduced-motion: reduce) { .hero-ticker .track { animation: none; } }
 .hero { padding-bottom: 0 !important; }
 .group-strip{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem 2rem;margin-top:2rem;padding:1.2rem 0;border-top:1px solid rgba(255,255,255,.14);border-bottom:1px solid rgba(255,255,255,.14)}.group-strip a{text-decoration:none}.gs-main{font:400 .8rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#e6e8ea}.gs-main span{color:#ff4d2e}.gs-links{display:flex;flex-wrap:wrap;gap:.4rem 1.6rem;font-size:.9rem}.gs-links a{color:#9aa0a5}.gs-links a:hover,.gs-main:hover{color:#fff}
+
+/* Gründer und Formular-Chips */
+.founder-cd { border-top: 1px solid var(--rule); }
+.fgrid { display: grid; gap: 2.5rem; align-items: center; }
+@media (min-width: 900px) { .fgrid { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 4.5rem; } }
+.fphoto { margin: 0; position: relative; overflow: hidden; max-width: 460px; }
+.fphoto img { display: block; width: 100%; height: auto; filter: saturate(.9) contrast(1.03); transition: transform 1.2s cubic-bezier(.2,.7,.2,1); }
+.fphoto:hover img { transform: scale(1.03); }
+.fphoto::after { content: ""; position: absolute; left: 0; bottom: 0; width: 3.5rem; height: 3px; background: var(--signal); }
+.founder-cd p { max-width: 58ch; }
+.sig { margin-top: 1.8rem; display: grid; gap: .35rem; }
+.sig b { font-weight: 500; color: var(--white); font-size: 1.15rem; }
+.sig span { font: 400 .74rem/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--steel); }
+.chipset { border: 0; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: .5rem; }
+.chipset legend { width: 100%; margin-bottom: .45rem; font: 400 .7rem/1.2 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--steel); padding: 0; }
+.chipc { position: relative; cursor: pointer; }
+.chipc input { position: absolute; opacity: 0; pointer-events: none; }
+.chipc span { display: inline-block; padding: .6rem .95rem; border: 1px solid var(--rule); font-size: .95rem; transition: border-color .2s, background .2s, color .2s; }
+.chipc:hover span { border-color: var(--white); }
+.chipc input:checked + span { border-color: var(--signal); background: rgba(255,77,46,.12); color: var(--white); }
+.chipc input:focus-visible + span { outline: 2px solid var(--signal); outline-offset: 2px; }
 </style>
 </head>
 <body>
@@ -719,6 +740,19 @@ Antwort per WhatsApp an +49 171 …</pre>
     </div>
   </section>
 
+  <section id="warum" class="founder-cd" aria-labelledby="warum-titel">
+    <div class="wrap fgrid">
+      <figure class="fphoto rv"><img src="leon-padel.jpg" width="800" height="1000" loading="lazy" alt="Leon Geffken, Gründer von CourtDesk, in einer Padelhalle"></figure>
+      <div>
+        <p class="status">Warum CourtDesk</p>
+        <h2 id="warum-titel">Entstanden auf dem Platz, nicht am Schreibtisch.</h2>
+        <p>Sport gehört für mich zum Alltag: Gym, Golf und vor allem Padel. Am Empfang habe ich immer wieder gesehen, wie viel Zeit für dieselben Fragen und das Abtippen von Wellpass- und Hansefit-Anmeldungen draufgeht, während Spieler warten.</p>
+        <p>Als Wirtschaftsinformatiker mit BWL-Hintergrund schaue ich bei solchen Abläufen automatisch, was sich vereinfachen lässt. Beruflich arbeite ich seit Jahren an digitalen Prozessen und Projekten. Daraus ist CourtDesk entstanden: ein Assistent, der die Routine übernimmt, damit das Team Zeit für die Spieler hat.</p>
+        <p class="sig"><b>Leon Geffken</b><span>Gründer · M.&nbsp;Sc. Wirtschaftsinformatik · M.&nbsp;Sc. Wirtschaftswissenschaft</span></p>
+      </div>
+    </div>
+  </section>
+
   <section id="kontakt" class="contact" aria-labelledby="kontakt-titel">
     <div class="wrap">
       <div>
@@ -726,15 +760,21 @@ Antwort per WhatsApp an +49 171 …</pre>
         <p>Schreib uns kurz, wie deine Anlage aufgestellt ist. Gemeinsam schauen wir, welche Fragen und Anmeldungen bei dir täglich Zeit kosten, und ob sich ein Assistent lohnt.</p>
         <p>Der Preis hängt vom Umfang ab, du bekommst ein individuelles Angebot. <b>Startangebot für die ersten drei Anlagen:</b> Einrichtung kostenlos, nach drei Monaten monatlich kündbar, im Gegenzug für ehrliches Feedback.</p>
         <a class="mail" href="mailto:leon@courtdesk.de?subject=CourtDesk%20f%C3%BCr%20unsere%20Anlage">leon@courtdesk.de</a>
-        <p class="who">Leon antwortet persönlich, meist am selben Tag</p>
+        <p class="who">Ich antworte persönlich, meist am selben Tag. Leon</p>
       </div>
       <form class="cform" id="cform" novalidate>
         <label><span>Name *</span><input name="name" autocomplete="name" required></label>
         <label><span>Anlage *</span><input name="anlage" autocomplete="organization" placeholder="z. B. Padelhaus Musterstadt"></label>
         <label><span>E-Mail</span><input name="mail" type="email" autocomplete="email"></label>
         <label><span>Telefon</span><input name="tel" type="tel" autocomplete="tel"></label>
-        <label><span>Sportarten</span>
-          <select name="sport"><option>Padel</option><option>Tennis</option><option>Pickleball</option><option>Mehrere</option></select>
+        <fieldset class="full chipset"><legend>Sportarten</legend>
+          <label class="chipc"><input type="checkbox" name="sport" value="Padel" checked><span>Padel</span></label>
+          <label class="chipc"><input type="checkbox" name="sport" value="Tennis"><span>Tennis</span></label>
+          <label class="chipc"><input type="checkbox" name="sport" value="Pickleball"><span>Pickleball</span></label>
+          <label class="chipc"><input type="checkbox" name="sport" value="Andere"><span>Andere</span></label>
+        </fieldset>
+        <label><span>Firmenfitness-Partner</span>
+          <select name="partner"><option>Wellpass</option><option>Hansefit/Epassi</option><option selected>Wellpass und Hansefit/Epassi</option><option>Noch keine</option><option>Weiß nicht</option></select>
         </label>
         <label><span>Anzahl Plätze</span>
           <select name="plaetze"><option>1–3</option><option selected>4–6</option><option>7–10</option><option>mehr als 10</option></select>
@@ -742,7 +782,7 @@ Antwort per WhatsApp an +49 171 …</pre>
         <label class="full"><span>Worum geht es?</span>
           <select name="interest"><option>15-Minuten-Gespräch</option><option>Startangebot sichern</option><option>Demo per Videocall</option><option>Ersparnis prüfen lassen</option><option>Funktionswunsch</option><option>Frage</option></select>
         </label>
-        <label class="full"><span>Nachricht (optional)</span><textarea name="text" placeholder="Was kostet bei euch am meisten Zeit? Welche Systeme nutzt ihr außer Playtomic?"></textarea></label>
+        <label class="full"><span>Nachricht (optional)</span><textarea name="text" placeholder="Was kostet bei euch am meisten Zeit? Welche Funktion wünschst du dir? Welche Systeme nutzt ihr außer Playtomic?"></textarea></label>
         <div class="send">
           <button class="btn" type="submit">Anfrage senden</button>
           <p class="hint" id="cform-hint">Öffnet dein E-Mail-Programm mit einer fertigen Nachricht, inklusive deines Ergebnisses aus dem Rechner. Auf dieser Website werden keine Daten gespeichert.</p>
@@ -1025,7 +1065,8 @@ Antwort per WhatsApp an +49 171 …</pre>
       'Anfrage über courtdesk.de', '',
       'Anliegen: ' + g('interest'),
       'Anlage: ' + g('anlage'),
-      'Sportarten: ' + g('sport') + ', Plätze: ' + g('plaetze'), '',
+      'Sportarten: ' + (d.getAll('sport').join(', ') || '-') + ', Plätze: ' + g('plaetze'),
+      'Firmenfitness: ' + g('partner'), '',
       'Name: ' + g('name'),
       'E-Mail: ' + (g('mail') || '-'),
       'Telefon: ' + (g('tel') || '-'), '',
