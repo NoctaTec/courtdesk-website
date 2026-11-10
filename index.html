@@ -421,6 +421,34 @@ header.top.small .brand { letter-spacing: -.01em; }
 .chipc input:checked + span { border-color: var(--signal); background: rgba(255,77,46,.12); color: var(--white); }
 .chipc input:focus-visible + span { outline: 2px solid var(--signal); outline-offset: 2px; }
 .sig{gap:0!important}.sig b{margin-bottom:.7rem}.sig span{display:block;white-space:nowrap;padding:.45rem 0;border-top:1px solid rgba(128,128,128,.22);max-width:22rem}.sig span:last-child{border-bottom:1px solid rgba(128,128,128,.22)}.sig .sig-role{color:var(--orange,#ff4d2e)}
+
+/* Live-Demo, Datenschutz-Link, Rechner-Zusatz, Daumen-Regler */
+.live { margin-top: 2.4rem; padding-top: 2rem; border-top: 1px solid var(--rule); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.6rem 2.4rem; }
+.live-cta { display: grid; gap: .8rem; justify-items: start; min-width: 0; max-width: 100%; }
+.btn.wa { display: inline-flex; align-items: center; gap: .7rem; padding: 1.05rem 1.6rem; background: var(--signal); border-color: var(--signal); color: #000; max-width: 100%; white-space: normal; line-height: 1.25; }
+.btn.wa:hover { background: #000; color: var(--white); border-color: var(--white); }
+.wa-i { width: 1.25rem; height: 1.25rem; flex: none; }
+.live-hint { margin: 0 !important; font: 500 .72rem/1.4 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--steel); }
+.live-qr { display: none; margin: 0; text-align: center; }
+.live-qr .qr { display: block; width: 132px; height: 132px; border: 6px solid #fff; }
+.live-qr figcaption { margin-top: .55rem; font: 500 .68rem/1.3 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--steel); }
+@media (min-width: 860px) and (hover: hover) and (pointer: fine) { .live-qr { display: block; } }
+.live-contact { margin-top: 2rem; padding-top: 1.6rem; }
+.out .extra { margin: 0 0 1.4rem; font-size: .95rem; line-height: 1.5; color: #000; }
+footer .flinks { margin: 0; padding: 1.1rem 0; border-bottom: 1px solid var(--rule); font: 500 .78rem/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; }
+footer .flinks a { color: var(--steel); text-decoration: none; }
+footer .flinks a:hover { color: var(--white); }
+@media (min-width: 860px) {
+  .road { grid-template-columns: repeat(2, 1fr); }
+  .road li { max-width: 46ch; }
+}
+@media (pointer: coarse) {
+  input[type="range"] { -webkit-appearance: none; appearance: none; height: 2.75rem; background: transparent; }
+  input[type="range"]::-webkit-slider-runnable-track { height: 6px; background: rgba(255,255,255,.22); border-radius: 3px; }
+  input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 30px; height: 30px; margin-top: -12px; border-radius: 50%; background: var(--signal); border: 3px solid #fff; }
+  input[type="range"]::-moz-range-track { height: 6px; background: rgba(255,255,255,.22); border-radius: 3px; }
+  input[type="range"]::-moz-range-thumb { width: 24px; height: 24px; border-radius: 50%; background: var(--signal); border: 3px solid #fff; }
+}
 </style>
 </head>
 <body>
@@ -538,6 +566,15 @@ header.top.small .brand { letter-spacing: -.01em; }
         <button class="vplay" id="vplay" type="button" aria-label="Demo-Video abspielen, 59 Sekunden"><i aria-hidden="true"></i><span>Demo ansehen · 0:59</span></button>
       </div>
     </div>
+    <div class="wrap">
+        <div class="live">
+          <div class="live-cta">
+            <a class="btn wa" href="https://wa.me/4915216409156?text=Hallo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" class="wa-i"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.4-.2Z"/></svg>Jetzt live auf WhatsApp testen</a>
+            <p class="live-hint">Demo-Anlage, ca. 12 Nachrichten pro Nummer</p>
+          </div>
+          <figure class="live-qr"><svg class="qr" viewBox="0 0 33 33" width="132" height="132" role="img" aria-label="QR-Code zur WhatsApp-Demo" shape-rendering="crispEdges"><rect width="33" height="33" fill="#fff"/><path fill="#000" d="M2 2h7v1h-7zM13 2h3v1h-3zM18 2h1v1h-1zM21 2h1v1h-1zM24 2h7v1h-7zM2 3h1v1h-1zM8 3h1v1h-1zM16 3h2v1h-2zM20 3h1v1h-1zM24 3h1v1h-1zM30 3h1v1h-1zM2 4h1v1h-1zM4 4h3v1h-3zM8 4h1v1h-1zM10 4h1v1h-1zM12 4h3v1h-3zM17 4h2v1h-2zM20 4h1v1h-1zM22 4h1v1h-1zM24 4h1v1h-1zM26 4h3v1h-3zM30 4h1v1h-1zM2 5h1v1h-1zM4 5h3v1h-3zM8 5h1v1h-1zM10 5h1v1h-1zM12 5h2v1h-2zM15 5h2v1h-2zM19 5h2v1h-2zM22 5h1v1h-1zM24 5h1v1h-1zM26 5h3v1h-3zM30 5h1v1h-1zM2 6h1v1h-1zM4 6h3v1h-3zM8 6h1v1h-1zM10 6h6v1h-6zM18 6h2v1h-2zM21 6h1v1h-1zM24 6h1v1h-1zM26 6h3v1h-3zM30 6h1v1h-1zM2 7h1v1h-1zM8 7h1v1h-1zM10 7h1v1h-1zM12 7h2v1h-2zM15 7h4v1h-4zM20 7h1v1h-1zM24 7h1v1h-1zM30 7h1v1h-1zM2 8h7v1h-7zM10 8h1v1h-1zM12 8h1v1h-1zM14 8h1v1h-1zM16 8h1v1h-1zM18 8h1v1h-1zM20 8h1v1h-1zM22 8h1v1h-1zM24 8h7v1h-7zM10 9h1v1h-1zM12 9h1v1h-1zM16 9h2v1h-2zM21 9h2v1h-2zM2 10h1v1h-1zM4 10h5v1h-5zM12 10h2v1h-2zM17 10h1v1h-1zM19 10h2v1h-2zM22 10h1v1h-1zM24 10h5v1h-5zM2 11h6v1h-6zM9 11h1v1h-1zM11 11h5v1h-5zM18 11h1v1h-1zM21 11h1v1h-1zM23 11h4v1h-4zM30 11h1v1h-1zM2 12h3v1h-3zM8 12h1v1h-1zM10 12h2v1h-2zM13 12h1v1h-1zM15 12h3v1h-3zM20 12h1v1h-1zM22 12h1v1h-1zM25 12h2v1h-2zM4 13h2v1h-2zM7 13h1v1h-1zM9 13h1v1h-1zM12 13h2v1h-2zM15 13h1v1h-1zM17 13h1v1h-1zM25 13h1v1h-1zM27 13h1v1h-1zM29 13h1v1h-1zM3 14h1v1h-1zM6 14h1v1h-1zM8 14h3v1h-3zM12 14h2v1h-2zM16 14h1v1h-1zM19 14h2v1h-2zM22 14h2v1h-2zM27 14h2v1h-2zM4 15h1v1h-1zM7 15h1v1h-1zM9 15h1v1h-1zM14 15h1v1h-1zM17 15h2v1h-2zM21 15h1v1h-1zM23 15h4v1h-4zM30 15h1v1h-1zM5 16h2v1h-2zM8 16h1v1h-1zM10 16h5v1h-5zM17 16h2v1h-2zM24 16h1v1h-1zM27 16h2v1h-2zM2 17h1v1h-1zM5 17h2v1h-2zM9 17h2v1h-2zM16 17h3v1h-3zM21 17h1v1h-1zM24 17h2v1h-2zM29 17h1v1h-1zM4 18h3v1h-3zM8 18h1v1h-1zM11 18h4v1h-4zM18 18h3v1h-3zM22 18h2v1h-2zM27 18h2v1h-2zM2 19h2v1h-2zM5 19h2v1h-2zM9 19h1v1h-1zM11 19h1v1h-1zM15 19h2v1h-2zM21 19h1v1h-1zM24 19h1v1h-1zM26 19h1v1h-1zM28 19h1v1h-1zM30 19h1v1h-1zM2 20h1v1h-1zM5 20h1v1h-1zM8 20h2v1h-2zM11 20h1v1h-1zM15 20h3v1h-3zM19 20h1v1h-1zM22 20h1v1h-1zM25 20h2v1h-2zM28 20h1v1h-1zM2 21h1v1h-1zM6 21h1v1h-1zM11 21h2v1h-2zM15 21h1v1h-1zM17 21h2v1h-2zM20 21h1v1h-1zM22 21h2v1h-2zM26 21h1v1h-1zM29 21h1v1h-1zM2 22h1v1h-1zM4 22h2v1h-2zM8 22h2v1h-2zM13 22h1v1h-1zM16 22h5v1h-5zM22 22h5v1h-5zM28 22h3v1h-3zM10 23h2v1h-2zM14 23h1v1h-1zM18 23h2v1h-2zM21 23h2v1h-2zM26 23h5v1h-5zM2 24h7v1h-7zM13 24h2v1h-2zM17 24h1v1h-1zM19 24h1v1h-1zM21 24h2v1h-2zM24 24h1v1h-1zM26 24h3v1h-3zM2 25h1v1h-1zM8 25h1v1h-1zM10 25h1v1h-1zM13 25h2v1h-2zM16 25h2v1h-2zM22 25h1v1h-1zM26 25h1v1h-1zM29 25h2v1h-2zM2 26h1v1h-1zM4 26h3v1h-3zM8 26h1v1h-1zM10 26h1v1h-1zM13 26h2v1h-2zM18 26h2v1h-2zM22 26h5v1h-5zM28 26h1v1h-1zM2 27h1v1h-1zM4 27h3v1h-3zM8 27h1v1h-1zM10 27h4v1h-4zM15 27h2v1h-2zM18 27h1v1h-1zM21 27h1v1h-1zM23 27h1v1h-1zM27 27h4v1h-4zM2 28h1v1h-1zM4 28h3v1h-3zM8 28h1v1h-1zM10 28h4v1h-4zM16 28h3v1h-3zM24 28h6v1h-6zM2 29h1v1h-1zM8 29h1v1h-1zM14 29h1v1h-1zM16 29h3v1h-3zM20 29h6v1h-6zM27 29h1v1h-1zM29 29h1v1h-1zM2 30h7v1h-7zM10 30h1v1h-1zM12 30h1v1h-1zM15 30h3v1h-3zM19 30h1v1h-1zM25 30h4v1h-4z"/></svg><figcaption>Mit dem Handy scannen</figcaption></figure>
+        </div>
+    </div>
   </section>
 
   <section id="leistungen" class="graphite" aria-labelledby="leistungen-titel">
@@ -546,7 +583,7 @@ header.top.small .brand { letter-spacing: -.01em; }
       <div class="cols">
         <article class="col">
           <h3>Assistenten im Messenger</h3>
-          <p>Ein digitaler Assistent auf WhatsApp beantwortet Standardfragen zu Öffnungszeiten, Preisen und Abläufen. Die Weiterleitung an einen Menschen bei Sonderfällen ist in Entwicklung.</p>
+          <p>Ein digitaler Assistent auf WhatsApp beantwortet Standardfragen zu Öffnungszeiten, Preisen und Abläufen. Sonderfälle gibt er mit allen Angaben an dein Team weiter.</p>
         </article>
         <article class="col">
           <h3>Anmeldungen ohne Tipparbeit</h3>
@@ -599,8 +636,8 @@ header.top.small .brand { letter-spacing: -.01em; }
           <div class="tabs" role="tablist" aria-label="Anwendungsfälle">
             <button class="tab" role="tab" id="t1" aria-controls="p1" aria-selected="true" type="button"><b>Mitgliedschaft freischalten</b><span>Wellpass, Hansefit/Epassi</span></button>
             <button class="tab" role="tab" id="t2" aria-controls="p2" aria-selected="false" tabindex="-1" type="button"><b>Fragen beantworten</b><span>Rund um die Uhr</span></button>
-            <button class="tab" role="tab" id="t3" aria-controls="p3" aria-selected="false" tabindex="-1" type="button"><b>Übergabe ans Team</b><span class="soon">Zum Pilotstart</span></button>
-            <button class="tab" role="tab" id="t4" aria-controls="p4" aria-selected="false" tabindex="-1" type="button"><b>Freie Plätze und Preise</b><span class="soon">In Entwicklung</span></button>
+            <button class="tab" role="tab" id="t3" aria-controls="p3" aria-selected="false" tabindex="-1" type="button"><b>Übergabe ans Team</b><span>Bei Sonderfällen</span></button>
+            <button class="tab" role="tab" id="t4" aria-controls="p4" aria-selected="false" tabindex="-1" type="button"><b>Freie Plätze und Preise</b><span>Live im Chat</span></button>
             <button class="tab" role="tab" id="t5" aria-controls="p5" aria-selected="false" tabindex="-1" type="button"><b>Rabatte und Check-in</b><span>Je nach Mitgliedschaft</span></button>
           </div>
           <p class="swipe" aria-hidden="true">Wische für weitere Beispiele</p>
@@ -643,7 +680,7 @@ Max Mustermann,max@mail.de,,,,Wellpass,</pre>
               <p class="msg bot">Ja, Umkleiden und Duschen sind im Erdgeschoss, Handtücher bringst du bitte selbst mit.</p>
             </div>
 
-            <div class="chat" role="tabpanel" id="p3" aria-labelledby="t3" hidden data-benefit="<b>Nutzen für die Anlage:</b> Sonderfälle kommen vollständig und gebündelt beim Team an. Keine Rückfragen, kein vergessener Rückruf. Diese Funktion kommt zum Pilotstart.">
+            <div class="chat" role="tabpanel" id="p3" aria-labelledby="t3" hidden data-benefit="<b>Nutzen für die Anlage:</b> Sonderfälle kommen vollständig und gebündelt beim Team an. Keine Rückfragen, kein vergessener Rückruf.">
               <p class="msg me">Wir wollen am Freitag mit 20 Leuten spielen. Geht das?</p>
               <p class="msg bot">Gute Idee! Gruppen plant bei uns Jana aus dem Team. Damit sie direkt ein Angebot machen kann: Ab wann wollt ihr spielen, und wie lange?</p>
               <p class="msg me">Ab 18 Uhr, so zwei Stunden</p>
@@ -657,7 +694,7 @@ Antwort per WhatsApp an +49 171 …</pre>
               </div>
             </div>
 
-            <div class="chat" role="tabpanel" id="p4" aria-labelledby="t4" hidden data-benefit="<b>Nutzen für die Anlage:</b> Spieler sehen freie Zeiten und Preise, ohne anzurufen. Gebucht wird weiterhin in Playtomic. Diese Funktion ist in Entwicklung.">
+            <div class="chat" role="tabpanel" id="p4" aria-labelledby="t4" hidden data-benefit="<b>Nutzen für die Anlage:</b> Spieler sehen freie Zeiten und Preise, ohne anzurufen. Gebucht wird weiterhin in Playtomic.">
               <p class="msg me">Ist Samstag um 18 Uhr ein Platz frei?</p>
               <p class="msg bot">Samstag um 18:00 ist Platz 3 frei: 90 Minuten für 48 €, also 12 € pro Person. Um 19:30 wären noch Platz 1 und 4 frei.</p>
               <p class="msg me">Nehm 18 Uhr</p>
@@ -699,6 +736,7 @@ Antwort per WhatsApp an +49 171 …</pre>
           <p class="split" id="r-split"></p>
           <p class="days" id="r-d"></p>
           <p class="eur" id="r-e">0 €</p>
+          <p class="extra">Dazu kommt, was der Rechner nicht zählt: Antworten nachts und am Wochenende, und keine Anmeldung bleibt liegen.</p>
           <p class="offer"><a href="#kontakt" data-interest="Ersparnis prüfen lassen">Lass uns prüfen, ob das bei dir hinkommt</a></p>
           <p class="note">Modellrechnung mit Beispielwerten, keine Garantie. Stundensatz Geschäftsführung: rund 45 €, Durchschnitt in Kleinstunternehmen laut Datev-Auswertung 2025. Empfang: Mindestlohn 13,90 € plus Abgaben für einen Minijob, gerundet.</p>
         </div>
@@ -713,24 +751,19 @@ Antwort per WhatsApp an +49 171 …</pre>
         <div class="now">
           <h3>Verfügbar</h3>
           <ul>
-            <li>Anmeldung für Wellpass und Hansefit/Epassi im Chat, mit Prüfung von Name, E-Mail und TAN-Format</li>
+            <li>Anmeldung für Wellpass und Hansefit/Epassi im Chat mit Prüfung von Name, E-Mail und TAN-Format</li>
             <li>Antworten auf Standardfragen aus den Infos deiner Anlage</li>
             <li>Persönliche Antwort zu Rabatt und Check-in je nach Mitgliedschaft</li>
+            <li>Freie Plätze und Preise live im Chat, mit Link zur Buchung</li>
+            <li>Antworten in der Sprache des Spielers</li>
+            <li>Übergabe an dein Team bei Sonderfällen</li>
+            <li>Täglicher Versand der Importdatei für Playtomic mit TAN-Liste</li>
           </ul>
         </div>
         <div class="next">
-          <h3>Zum Pilotstart</h3>
-          <ul>
-            <li>Täglicher Versand der Importdatei für Playtomic, mit TAN-Liste</li>
-            <li>Übergabe an dein Team bei Sonderfällen</li>
-          </ul>
-        </div>
-        <div>
           <h3>In Entwicklung</h3>
           <ul>
-            <li>Freie Plätze und Preise direkt im Chat, mit Link zur Buchung</li>
             <li>Auswertung für deine Anlage mit Anmeldungen, häufigsten Fragen und gesparter Zeit</li>
-            <li>Antworten auf Englisch</li>
           </ul>
         </div>
       </div>
@@ -759,9 +792,15 @@ Antwort per WhatsApp an +49 171 …</pre>
       <div>
         <h2 id="kontakt-titel">Du betreibst eine Anlage für Padel, Tennis oder Pickleball?</h2>
         <p>Schreib uns kurz, wie deine Anlage aufgestellt ist. Gemeinsam schauen wir, welche Fragen und Anmeldungen bei dir täglich Zeit kosten, und ob sich ein Assistent lohnt.</p>
-        <p>Der Preis hängt vom Umfang ab, du bekommst ein individuelles Angebot. <b>Startangebot für die ersten drei Anlagen:</b> Einrichtung kostenlos, nach drei Monaten monatlich kündbar, im Gegenzug für ehrliches Feedback.</p>
+        <p>Für die ersten Anlagen gibt es Konditionen zum Start. Sprich uns an.</p>
         <a class="mail" href="mailto:leon@courtdesk.de?subject=CourtDesk%20f%C3%BCr%20unsere%20Anlage">leon@courtdesk.de</a>
         <p class="who">Ich antworte persönlich, meist am selben Tag. Leon</p>
+        <div class="live live-contact">
+          <div class="live-cta">
+            <a class="btn wa" href="https://wa.me/4915216409156?text=Hallo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" class="wa-i"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.4-.2Z"/></svg>Jetzt live auf WhatsApp testen</a>
+            <p class="live-hint">Demo-Anlage, ca. 12 Nachrichten pro Nummer</p>
+          </div>
+        </div>
       </div>
       <form class="cform" id="cform" novalidate>
         <label><span>Name *</span><input name="name" autocomplete="name" required></label>
@@ -781,7 +820,7 @@ Antwort per WhatsApp an +49 171 …</pre>
           <select name="plaetze"><option>1–3</option><option selected>4–6</option><option>7–10</option><option>mehr als 10</option></select>
         </label>
         <label class="full"><span>Worum geht es?</span>
-          <select name="interest"><option>15-Minuten-Gespräch</option><option>Startangebot sichern</option><option>Demo per Videocall</option><option>Ersparnis prüfen lassen</option><option>Funktionswunsch</option><option>Frage</option></select>
+          <select name="interest"><option>15-Minuten-Gespräch</option><option>Demo per Videocall</option><option>Ersparnis prüfen lassen</option><option>Funktionswunsch</option><option>Frage</option></select>
         </label>
         <label class="full"><span>Nachricht (optional)</span><textarea name="text" placeholder="Was kostet bei euch am meisten Zeit? Welche Funktion wünschst du dir? Welche Systeme nutzt ihr außer Playtomic?"></textarea></label>
         <div class="send">
@@ -794,7 +833,7 @@ Antwort per WhatsApp an +49 171 …</pre>
 </main>
 
 <div class="dock" id="dock" aria-hidden="true">
-  <span>Einrichtung kostenlos</span>
+  <span>Fragen zu deiner Anlage?</span>
   <a class="btn" href="#kontakt" data-interest="15-Minuten-Gespräch" tabindex="-1">15-Min.-Gespräch</a>
 </div>
 
@@ -818,27 +857,7 @@ Antwort per WhatsApp an +49 171 …</pre>
       </div>
     </details>
 
-    <details id="datenschutz">
-      <summary>Datenschutzerklärung</summary>
-      <div class="legal">
-        <h3>Verantwortlicher</h3>
-        <p>TF Vespasian Vermögensverwaltungs-GmbH, vertreten durch die Geschäftsführer Leon Geffken und Bernd Geffken. Anschrift und Kontakt siehe Impressum.</p>
-        <h3>Hosting dieser Website</h3>
-        <p>Diese Website wird über GitHub Pages ausgeliefert (GitHub Inc., Microsoft-Konzern, USA). Beim Aufruf verarbeitet der Anbieter technisch notwendige Daten, insbesondere die IP-Adresse, Datum und Uhrzeit sowie die aufgerufene Seite, um die Seite auszuliefern und die Sicherheit zu gewährleisten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (Interesse an einem sicheren und stabilen Betrieb). Dabei kann eine Übermittlung in die USA stattfinden, es gelten die vom Anbieter bereitgestellten Garantien nach Art. 46 DSGVO.</p>
-        <h3>Domain und DNS</h3>
-        <p>Diese Website ist unter courtdesk.de erreichbar. Die Domain und unser E-Mail-Postfach werden beim Anbieter aftermarket.de verwaltet.</p>
-        <h3>Cookies, Tracking, Schriftarten</h3>
-        <p>Diese Website setzt keine Cookies, verwendet keine Werbedienste und lädt keine Schriftarten von Drittanbietern. Der Zeitrechner rechnet ausschließlich in deinem Browser, eingegebene Werte werden nicht übertragen.</p>
-        <h3>Kontaktformular</h3>
-        <p>Das Kontaktformular speichert und überträgt keine Daten. Es öffnet nur dein eigenes E-Mail-Programm mit einer vorbereiteten Nachricht, die du selbst absendest.</p>
-        <h3>Reichweitenmessung</h3>
-        <p>Um zu verstehen, wie unsere Website genutzt wird, verwenden wir Cloudflare Web Analytics (Cloudflare, Inc., USA). Dabei werden keine Cookies gesetzt, keine Daten im Browser gespeichert und keine Nutzerprofile gebildet. Erfasst werden nur zusammengefasste Angaben wie aufgerufene Seiten, Herkunftsseite, Land, Gerätetyp und Ladezeiten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO.</p>
-        <h3>Kontakt per E-Mail</h3>
-        <p>Wenn du uns schreibst, verarbeiten wir deine E-Mail-Adresse und den Inhalt deiner Nachricht, um sie zu beantworten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b oder f DSGVO. Wir löschen die Daten, sobald die Anfrage erledigt ist und keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</p>
-        <h3>Deine Rechte</h3>
-        <p>Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Du kannst dich außerdem bei einer Datenschutzaufsichtsbehörde beschweren, zum Beispiel bei der Landesbeauftragten für den Datenschutz Niedersachsen.</p>
-      </div>
-    </details>
+    <p class="flinks"><a href="/datenschutz.html">Datenschutz</a></p>
 
     <div class="group-strip"><a class="gs-main" href="https://vespasian-group.de">Ein Bereich der Vespasian Group <span aria-hidden="true">→</span></a><span class="gs-links"><a href="https://vespasian-immobilien.de">Vespasian Immobilien</a><a href="https://vespasian-advisory.de">Vespasian Advisory</a><a href="https://vespasian-invest.de">Vespasian Invest</a><a href="https://noctatec.de">NoctaTec</a></span></div>
     <p class="tm">© 2026 CourtDesk ist ein Produkt von NoctaTec, einer Marke der TF Vespasian Vermögensverwaltungs-GmbH. WhatsApp, Wellpass, Hansefit, Epassi und Playtomic sind Marken ihrer jeweiligen Inhaber. CourtDesk steht in keiner Verbindung zu diesen Unternehmen und wird nicht von ihnen gefördert.</p>
@@ -872,9 +891,21 @@ Antwort per WhatsApp an +49 171 …</pre>
   // Leiste unten: sichtbar, sobald die Hero-Buttons weg sind, aus beim Kontaktbereich
   var dock = document.getElementById('dock');
   if ('IntersectionObserver' in window) {
-    var heroGone = false, contactIn = false;
+    var heroGone = false, contactIn = false, overlap = false;
+    // Leiste nie über Buttons, Reglern oder Eingabefeldern
+    var hits = Array.prototype.slice.call(document.querySelectorAll('main a.btn, main button, main input, main select, main textarea, main .live-hint, main .live-qr, main .textlink'));
+    function checkOverlap() {
+      var vh = window.innerHeight, dh = dock.offsetHeight || 70, dl = dock.getBoundingClientRect().left;
+      var top = vh - dh - (window.innerWidth >= 700 ? 26 : 0) - 8;
+      var o = hits.some(function (el) { var r = el.getBoundingClientRect(); return r.height > 0 && r.bottom > top && r.top < vh && r.right > dl; });
+      if (o !== overlap) { overlap = o; syncDock(); }
+    }
+    var oTick = false;
+    window.addEventListener('scroll', function () { if (!oTick) { oTick = true; requestAnimationFrame(function () { oTick = false; checkOverlap(); }); } }, { passive: true });
+    window.addEventListener('resize', checkOverlap);
+    document.addEventListener('click', function () { setTimeout(checkOverlap, 400); });
     function syncDock() {
-      var on = heroGone && !contactIn;
+      var on = heroGone && !contactIn && !overlap;
       dock.classList.toggle('on', on);
       dock.setAttribute('aria-hidden', on ? 'false' : 'true');
       dock.querySelector('a').tabIndex = on ? 0 : -1;
@@ -883,10 +914,14 @@ Antwort per WhatsApp an +49 171 …</pre>
       .observe(document.querySelector('.hero .actions'));
     var seen = {};
     var io2 = new IntersectionObserver(function (e) {
-      e.forEach(function (x) { seen[x.target.id || 'f'] = x.isIntersecting; });
+      e.forEach(function (x) { seen[x.target.getAttribute('data-dk')] = x.isIntersecting; });
       contactIn = Object.keys(seen).some(function (k) { return seen[k]; }); syncDock();
     });
-    io2.observe(document.getElementById('kontakt')); io2.observe(document.querySelector('footer'));
+    // Aus beim Kontakt, in der Fußzeile und überall dort, wo die Leiste Regler oder Buttons verdecken würde
+    var dockOff = ['#kontakt', 'footer', '#rechner .calc', '.live'];
+    dockOff.forEach(function (sel) {
+      document.querySelectorAll(sel).forEach(function (el, i) { el.setAttribute('data-dk', sel + i); io2.observe(el); });
+    });
   }
 
   // Tabs und Chat-Abspielen
