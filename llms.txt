@@ -1,0 +1,31 @@
+# CourtDesk
+
+> CourtDesk ist ein WhatsApp-Assistent für Padel-, Tennis- und Pickleballanlagen in Deutschland. Er nimmt Firmenfitness-Anmeldungen von EGYM Wellpass und Hansefit/Epassi per WhatsApp entgegen, prüft Name, E-Mail des Playtomic-Kontos und das Format von TAN oder Mitglieds-ID und schickt der Anlage einmal am Tag eine Datei für den Kundenimport in Playtomic. Außerdem beantwortet er Standardfragen der Spieler rund um die Uhr.
+
+## Wichtige Grenzen
+
+- Keine offizielle Verbindung zu Playtomic, Wellpass, Hansefit oder Epassi. Den Import startet die Anlage selbst.
+- Prüft nur das Format von TAN oder ID, nicht deren Gültigkeit.
+- Kein Check-in und keine Zahlungen. Den Check-in macht der Spieler in der App seines Anbieters.
+- Urban Sports Club wird noch nicht unterstützt.
+
+## Firmenfitness
+
+- [Überblick Firmenfitness-Automatisierung](https://www.courtdesk.de/firmenfitness-automatisierung/)
+- [EGYM Wellpass und Playtomic](https://www.courtdesk.de/egym-wellpass-playtomic/)
+- [Hansefit und Epassi mit Playtomic](https://www.courtdesk.de/hansefit-epassi-playtomic/)
+
+## Ratgeber
+
+- [Playtomic-Kundenimport per CSV](https://www.courtdesk.de/playtomic-kundenimport/)
+- [Wellpass und Hansefit für Tennis- und Pickleball-Anlagen](https://www.courtdesk.de/tennis-pickleball-firmenfitness/)
+- [Anlage ohne Empfang](https://www.courtdesk.de/anlage-ohne-empfang/)
+- [Checkliste Firmenfitness](https://www.courtdesk.de/checkliste-firmenfitness/)
+- [Software für Padelhallen](https://www.courtdesk.de/software-padelhalle/)
+
+## Kontakt
+
+- E-Mail: kontakt@courtdesk.de
+- Telefon: +49 152 02665878
+- CourtDesk ist ein Produkt von [NoctaTec](https://www.noctatec.de/), einer Marke der TF Vespasian Vermögensverwaltungs-GmbH ([Vespasian Group](https://vespasian-group.de/)).
+- Anbieter: TF Vespasian Vermögensverwaltungs-GmbH, Buchenweg 16, 28870 Ottersberg, Amtsgericht Walsrode HRB 208382. Geschäftsführer: Leon Geffken und Bernd Geffken.
