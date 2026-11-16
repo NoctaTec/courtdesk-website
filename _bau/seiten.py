@@ -38,7 +38,7 @@ CSS += """
 """
 
 LOGO = '<svg viewBox="0 0 32 32" aria-hidden="true"><rect x="8.5" y="3.5" width="15" height="25" fill="none" stroke="#f4f5f6" stroke-width="1.8"/><line x1="4" y1="16" x2="28" y2="16" stroke="#ff4d2e" stroke-width="2.2"/><circle cx="16" cy="16" r="2.6" fill="#ff4d2e"/></svg>'
-TM = "WhatsApp, EGYM Wellpass, Hansefit, Epassi und Playtomic sind Marken ihrer jeweiligen Inhaber. CourtDesk steht in keiner Verbindung zu diesen Unternehmen und wird nicht von ihnen gefördert."
+TM = "NoctaTec und CourtDesk sind Marken der TF Vespasian Vermögensverwaltungs-GmbH. WhatsApp, EGYM Wellpass, Hansefit, Epassi und Playtomic sind Marken ihrer jeweiligen Inhaber. CourtDesk steht in keiner Verbindung zu diesen Unternehmen und wird nicht von ihnen gefördert."
 
 
 def faq_html(faq):
