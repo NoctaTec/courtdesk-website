@@ -128,13 +128,6 @@
   /* Abschnitte */
   section { padding-block: clamp(3.5rem, 8vw, 6.5rem); scroll-margin-top: 4rem; border-bottom: 1px solid var(--rule); }
   section.graphite { background: var(--graphite); }
-  .gal-full { margin: 2rem 0 2.2rem; }
-  .gal-full img, .gal img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); background: #000; }
-  .gal { display: flex; gap: 1.4rem; overflow-x: auto; scroll-snap-type: x mandatory; padding: 0 0 1.2rem; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: var(--steel) transparent; }
-  .gal figure { flex: 0 0 min(86%, 420px); margin: 0; scroll-snap-align: start; }
-  .gal figcaption { margin-top: .9rem; font-size: .95rem; line-height: 1.5; color: var(--ink); max-width: 44ch; }
-  .gal figcaption b { display: block; margin-bottom: .25rem; font: 500 .76rem/1.3 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--signal); }
-  .gal:focus-visible { outline: 2px solid var(--signal); outline-offset: 4px; }
   h2 { margin: 0 0 2rem; font: 800 clamp(1.9rem, 4.4vw, 3.2rem)/1.02 var(--head); letter-spacing: -.01em; text-transform: uppercase; color: var(--white); max-width: 22ch; text-wrap: balance; }
   h3 { margin: 0 0 .7rem; font: 700 1.35rem/1.1 var(--head); letter-spacing: .02em; text-transform: uppercase; color: var(--white); }
 
@@ -469,6 +462,84 @@ footer .flinks a:hover { color: var(--white); }
   .faq-list a, .faq-more a { color: var(--white); text-decoration-color: var(--signal); text-underline-offset: 3px; }
   footer .flinks { display: flex; flex-wrap: wrap; gap: .8rem 1.6rem; line-height: 1.3; }
   .faq-more { margin: 1.8rem 0 0; display: flex; flex-wrap: wrap; gap: .6rem 1.4rem; font: 500 .78rem/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--steel); }
+
+/* ---- Umbau 24.11.: Überschrift, Ausprobieren, Versprechen, Schritte, Mail-Ansicht, Presets ---- */
+h1 .rot { color: var(--signal); display: inline-block; transition: opacity .3s ease, transform .3s ease; }
+h1 .rot.out { opacity: 0; transform: translateY(.18em); }
+.btn.wa.big { padding: 1.35rem 2.1rem; font-size: 1.15rem; }
+.actions .btn.wa { padding: 1.05rem 1.5rem; }
+.try { background: linear-gradient(180deg, #0b0c0d, #000); }
+.try-grid { display: grid; gap: 2.4rem; align-items: center; }
+.try-copy h2 { max-width: 16ch; }
+.try-qr { margin: 0; text-align: center; }
+.try-qr a { display: inline-block; background: #fff; padding: 14px; box-shadow: 0 0 0 1px rgba(255,255,255,.2), 0 24px 60px rgba(255,77,46,.14); transition: transform .25s ease, box-shadow .25s ease; }
+.try-qr a:hover { transform: translateY(-4px); box-shadow: 0 0 0 1px #fff, 0 30px 70px rgba(255,77,46,.28); }
+.try-qr .qr-big { display: block; width: 300px; height: 300px; }
+.try-qr figcaption { margin-top: 1rem; font: 500 .8rem/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--steel); }
+.try .live-hint { margin-top: 1rem !important; }
+@media (min-width: 900px) { .try-grid { grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: 4rem; } .try-qr { justify-self: center; } }
+@media (hover: none), (max-width: 899px) { .try-qr { display: none; } }
+@media (max-width: 899px) { .btn.wa.big { display: flex; justify-content: center; width: 100%; } .actions .btn { width: 100%; justify-content: center; text-align: center; } .actions .btn.wa { display: flex; } }
+
+#versprechen { background: #000; }
+#versprechen .vh { max-width: 20ch; margin-bottom: clamp(2rem, 4vw, 3.2rem); }
+.claims { display: grid; gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+.claim { background: #000; padding: clamp(1.6rem, 3.2vw, 2.8rem); position: relative; transition: background-color .25s; }
+.claim::before { content: ""; position: absolute; left: 0; top: 0; width: 0; height: 3px; background: var(--signal); transition: width .5s ease; }
+.claim:hover { background: #0b0c0d; }
+.claim:hover::before, .claim.in::before { width: 3.5rem; }
+.claim .n { margin: 0 0 1.1rem; font: 500 .8rem/1 var(--mono); letter-spacing: .14em; color: var(--signal); }
+.claim h3 { margin: 0 0 1rem; font: 500 clamp(1.7rem, 3.6vw, 2.9rem)/1.04 var(--sans); letter-spacing: -.035em; text-transform: none; color: var(--white); text-wrap: balance; }
+.claim p:last-child { margin: 0; max-width: 46ch; color: var(--ink); }
+.claims-foot { margin: 1.4rem 0 0; font: 500 .8rem/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--steel); }
+@media (min-width: 820px) { .claims { grid-template-columns: 1fr 1fr; } }
+.js-rv .rv2 { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease, background-color .25s; }
+.js-rv .rv2.in { opacity: 1; transform: none; }
+
+.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 1px; background: var(--rule); border: 1px solid var(--rule); counter-reset: s; }
+.steps li { background: #0b0c0d; padding: 1.6rem 1.5rem 1.5rem; display: flex; flex-direction: column; gap: .5rem; }
+.steps .n { font: 500 .85rem/1 var(--mono); letter-spacing: .12em; color: var(--signal); }
+.steps h3 { margin: .3rem 0 0; font: 500 1.55rem/1.15 var(--sans); letter-spacing: -.02em; text-transform: none; color: var(--white); }
+.steps p { margin: 0; font-size: 1.05rem; line-height: 1.55; color: var(--ink); }
+.steps i { margin-top: auto; padding-top: 1rem; font: 400 .75rem/1 var(--mono); font-style: normal; letter-spacing: .12em; text-transform: uppercase; color: var(--steel); }
+.steps-note { margin: 1rem 0 0; font-size: .9rem; color: var(--steel); }
+@media (min-width: 700px) { .steps { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1100px) { .steps { grid-template-columns: repeat(4, 1fr); } }
+
+.mailview { margin-top: clamp(3rem, 6vw, 5rem); display: grid; gap: 2rem; align-items: start; }
+.mv-h { margin: 0 0 1rem; font: 500 clamp(1.7rem, 3.4vw, 2.6rem)/1.05 var(--sans); letter-spacing: -.03em; text-transform: none; color: var(--white); }
+.mv-tabs { display: grid; gap: .7rem; margin-top: 1.4rem; }
+.mv-tab { text-align: left; cursor: pointer; background: transparent; color: var(--steel); border: 1px solid var(--rule); padding: 1.05rem 1.2rem; font: inherit; transition: color .15s, border-color .15s, background-color .15s; }
+.mv-tab b { display: block; font: 500 1.15rem/1.2 var(--sans); color: inherit; margin-bottom: .3rem; }
+.mv-tab span { font: 500 .74rem/1.3 var(--mono); letter-spacing: .1em; text-transform: uppercase; }
+.mv-tab:hover { color: var(--white); border-color: var(--steel); }
+.mv-tab[aria-selected="true"] { color: var(--white); border-color: var(--white); background: #000; box-shadow: inset 3px 0 0 var(--signal); }
+.mv-benefit { margin: 1.4rem 0 0; padding-top: 1.1rem; border-top: 1px solid var(--rule); max-width: 50ch; }
+.mv-shot { justify-self: center; width: 100%; max-width: 420px; }
+.mv-panel { margin: 0; }
+.mv-panel[hidden] { display: none; }
+.mv-panel img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); background: #000; }
+@media (min-width: 900px) { .mailview { grid-template-columns: minmax(0, 1fr) 420px; gap: 4rem; } .mv-copy { position: sticky; top: 6rem; } }
+
+.presets { margin-bottom: 1.4rem; }
+@media (max-width: 899px) {
+  .tabs { display: grid; grid-template-columns: 1fr 1fr; overflow: visible; margin-inline: 0; padding: 0; -webkit-mask-image: none; mask-image: none; }
+  .tab { min-width: 0; max-width: none; padding: .9rem .9rem; }
+  .tab b { font-size: 1.02rem; }
+  .tab span { font-size: .66rem; }
+  p.swipe { display: none !important; }
+}
+.dock .btn.wa { padding: .85rem 1.1rem; font-size: .85rem; }
+.dock .wa-i { width: 1.1rem; height: 1.1rem; }
+@media (max-width: 699px) { .dock span { display: none; } .dock { gap: .7rem; } .dock .btn { flex: 1 1 0; text-align: center; justify-content: center; } .dock .btn.ghost { flex: 0 0 auto; } }
+
+@media (min-width: 700px) {
+  nav.main { flex-wrap: nowrap; gap: clamp(.9rem, 1.6vw, 1.8rem); }
+  nav.main a { white-space: nowrap; font-size: .74rem; letter-spacing: .06em; }
+  header.top .wrap { flex-wrap: nowrap; gap: 1rem clamp(1rem, 2vw, 2rem); }
+  .head-cta { white-space: nowrap; }
+}
+.presets button { flex: 1 1 9.5rem; }
 </style>
 </head>
 <body>
@@ -501,14 +572,15 @@ footer .flinks a:hover { color: var(--white); }
     <canvas id="hive" aria-hidden="true"></canvas>
     <div class="wrap">
       <div class="copy">
-        <h1 id="titel">Deine Halle antwortet immer. Auch nachts.</h1>
+        <h1 id="titel">Deine Halle antwortet immer.<br>Auch <span class="rot" id="rot">nachts</span>.</h1>
         <p class="lead">CourtDesk ist der WhatsApp-Assistent für Padel-, Tennis- und Pickleballanlagen. Er beantwortet Standardfragen rund um die Uhr, nimmt Firmenfitness-Anmeldungen von Wellpass und Hansefit/Epassi entgegen und bereitet sie für den Import in Playtomic vor. Dein Team hat wieder Zeit für die Spieler vor Ort.</p>
         <div class="actions">
-          <a class="btn" href="#kontakt" data-interest="15-Minuten-Gespräch">15-Minuten-Gespräch</a>
+          <a class="btn wa" href="https://wa.me/4915216409156?text=Hallo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" class="wa-i"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.4-.2Z"/></svg>Paola jetzt auf WhatsApp testen</a>
+          <a class="btn ghost" href="#kontakt" data-interest="15-Minuten-Gespräch">15-Minuten-Gespräch</a>
           <a class="textlink" href="#video">Demo-Video ansehen</a>
           <a class="textlink" href="#rechner">Ersparnis berechnen</a>
         </div>
-        <p class="save"><b id="hero-h">bis zu 10 Stunden pro Monat</b><span id="hero-e">und rund 450 € Arbeitszeit</span> gewinnt eine Anlage in unserer Beispielrechnung zurück, bei 15 Anmeldungen pro Woche und 10 Fragen am Tag. <a href="#rechner">Mit deinen Zahlen rechnen</a></p>
+        <p class="save"><b id="hero-h">bis zu 20 Stunden pro Monat</b><span id="hero-e">und rund 900 € Arbeitszeit</span> gewinnt eine größere Anlage in unserer Beispielrechnung zurück, bei 30 Anmeldungen pro Woche und 20 Fragen am Tag. <a href="#rechner">Mit deinen Zahlen rechnen</a></p>
       </div>
 
       <div class="frame-wrap">
@@ -560,13 +632,34 @@ footer .flinks a:hover { color: var(--white); }
   </section>
 
 
-  <div class="band">
-    <div class="wrap">
-      <div class="fact"><h3>Läuft auf WhatsApp</h3><p>Spieler schreiben dort, wo sie ohnehin sind. Keine App, kein Login.</p></div>
-      <div class="fact"><h3>1 Minute statt 45</h3><p>15 neue Mitglieder per Importdatei anlegen statt einzeln abzutippen.</p></div>
-      <div class="fact"><h3>Antwort in Sekunden</h3><p>Auch nachts und am Wochenende, ohne dass bei dir das Telefon klingelt.</p></div>
+  <section id="ausprobieren" class="try" aria-labelledby="try-titel">
+    <div class="wrap try-grid">
+      <div class="try-copy">
+        <p class="status">Live ausprobieren</p>
+        <h2 id="try-titel">Schreib Paola. Jetzt. Sie antwortet sofort.</h2>
+        <p class="sub">Das ist der echte Assistent auf WhatsApp, so wie deine Spieler ihn erleben. Sag Hallo, frag nach Öffnungszeiten oder probier eine Anmeldung mit Musterdaten. Ohne App, ohne Anmeldung.</p>
+        <a class="btn wa big" href="https://wa.me/4915216409156?text=Hallo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" class="wa-i"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.4-.2Z"/></svg>Chat mit Paola öffnen</a>
+        <p class="live-hint">Beispielanlage · ca. 12 Nachrichten pro Nummer · Kurzlink courtdesk.de/paola</p>
+      </div>
+      <figure class="try-qr">
+        <a href="https://wa.me/4915216409156?text=Hallo" target="_blank" rel="noopener" aria-label="WhatsApp-Chat mit Paola öffnen"><svg class="qr-big" viewBox="0 0 33 33" role="img" aria-label="QR-Code: öffnet den WhatsApp-Chat mit Paola" shape-rendering="crispEdges"><path fill="#fff" d="M0 0h33v33h-33z"/><path stroke="#000" d="M2 2.5h7m1 0h2m2 0h2m2 0h1m2 0h1m2 0h7m-29 1h1m5 0h1m1 0h2m2 0h1m4 0h1m2 0h1m1 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m2 0h1m1 0h1m1 0h1m5 0h2m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h3m1 0h3m2 0h2m1 0h1m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m2 0h1m1 0h6m1 0h3m1 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m4 0h2m1 0h1m4 0h1m2 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-21 1h2m1 0h2m4 0h3m-20 1h1m1 0h2m1 0h3m1 0h2m1 0h2m2 0h2m1 0h2m1 0h1m2 0h1m1 0h2m-26 1h3m2 0h1m1 0h2m4 0h1m2 0h1m1 0h4m3 0h1m-28 1h1m1 0h2m1 0h1m2 0h3m2 0h1m2 0h1m3 0h1m4 0h2m-28 1h1m2 0h1m1 0h1m2 0h1m4 0h1m2 0h1m1 0h2m1 0h4m3 0h1m-25 1h3m2 0h4m4 0h2m1 0h2m3 0h2m-25 1h1m2 0h1m3 0h2m2 0h2m1 0h5m1 0h1m3 0h3m-27 1h3m1 0h1m1 0h2m2 0h1m1 0h1m3 0h2m1 0h1m2 0h1m1 0h3m-28 1h2m4 0h3m1 0h3m1 0h2m2 0h1m2 0h2m3 0h1m-26 1h6m2 0h1m4 0h2m6 0h3m1 0h1m-25 1h2m3 0h1m2 0h1m1 0h1m1 0h2m1 0h1m2 0h1m3 0h3m-28 1h1m2 0h4m2 0h1m1 0h1m3 0h1m1 0h1m2 0h1m2 0h2m1 0h1m-25 1h2m3 0h1m4 0h1m3 0h2m5 0h1m2 0h1m-26 1h1m2 0h3m1 0h3m2 0h1m3 0h1m1 0h8m-19 1h7m1 0h2m1 0h2m3 0h5m-29 1h7m1 0h1m1 0h2m1 0h1m4 0h3m1 0h1m1 0h2m1 0h1m-28 1h1m5 0h1m1 0h2m6 0h1m1 0h3m3 0h2m-26 1h1m1 0h3m1 0h1m2 0h4m1 0h1m1 0h2m2 0h5m1 0h1m-27 1h1m1 0h3m1 0h1m1 0h4m2 0h7m2 0h3m2 0h1m-29 1h1m1 0h3m1 0h1m1 0h3m1 0h1m5 0h2m1 0h1m1 0h1m2 0h1m1 0h1m-29 1h1m5 0h1m2 0h3m3 0h2m1 0h6m1 0h1m1 0h1m-28 1h7m1 0h2m2 0h3m3 0h1m1 0h2m3 0h1m1 0h1"/></svg></a>
+        <figcaption>Mit dem Handy scannen<br>oder anklicken</figcaption>
+      </figure>
     </div>
-  </div>
+  </section>
+
+  <section id="versprechen" aria-labelledby="versprechen-titel">
+    <div class="wrap">
+      <h2 id="versprechen-titel" class="vh">Weniger Telefon. Weniger Tipparbeit. Mehr Platz für Spiel.</h2>
+      <div class="claims">
+        <article class="claim rv2"><p class="n">01</p><h3>Dein Team schläft. Paola antwortet.</h3><p>Öffnungszeiten, Preise, Parken, Leihschläger: Standardfragen beantwortet der Assistent in Sekunden, auch nachts, sonntags und an Feiertagen.</p></article>
+        <article class="claim rv2"><p class="n">02</p><h3>Ein Import statt fünfzehn Anmeldungen.</h3><p>Aus etwa 3 Minuten Handarbeit pro Anmeldung werden rund 20 Sekunden Import, bis zu 90 % weniger Aufwand. Den Rechenweg findest du im Rechner.</p></article>
+        <article class="claim rv2"><p class="n">03</p><h3>Kein Feierabend. Keine Warteschleife.</h3><p>Paola wird nicht müde und kennt keine Stoßzeit. Wenn montags zehn Spieler gleichzeitig schreiben, bekommt jeder sofort eine Antwort.</p></article>
+        <article class="claim rv2"><p class="n">04</p><h3>Fokussier dich auf die Spieler vor Ort.</h3><p>Routine übernimmt der Assistent. Sonderfälle landen vollständig bei deinem Team, mit Zusammenfassung, Kontaktdaten und vorausgefüllter Antwort.</p></article>
+      </div>
+      <p class="claims-foot">Läuft auf WhatsApp, ohne App und ohne Login. Dein Playtomic bleibt, wie es ist.</p>
+    </div>
+  </section>
 
   <section id="video" aria-labelledby="video-titel">
     <div class="wrap video-wrap">
@@ -587,15 +680,6 @@ footer .flinks a:hover { color: var(--white); }
         </video>
         <button class="vplay" id="vplay" type="button" aria-label="Demo-Video abspielen, 59 Sekunden"><i aria-hidden="true"></i><span>Demo ansehen · 0:59</span></button>
       </div>
-    </div>
-    <div class="wrap">
-        <div class="live">
-          <div class="live-cta">
-            <a class="btn wa" href="https://wa.me/4915216409156?text=Hallo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" class="wa-i"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.4-.2Z"/></svg>Jetzt live auf WhatsApp testen</a>
-            <p class="live-hint">Zum Ausprobieren, ca. 12 Nachrichten pro Nummer</p>
-          </div>
-          <figure class="live-qr"><svg class="qr" viewBox="0 0 33 33" width="132" height="132" role="img" aria-label="QR-Code zur WhatsApp-Demo" shape-rendering="crispEdges"><rect width="33" height="33" fill="#fff"/><path fill="#000" d="M2 2h7v1h-7zM13 2h3v1h-3zM18 2h1v1h-1zM21 2h1v1h-1zM24 2h7v1h-7zM2 3h1v1h-1zM8 3h1v1h-1zM16 3h2v1h-2zM20 3h1v1h-1zM24 3h1v1h-1zM30 3h1v1h-1zM2 4h1v1h-1zM4 4h3v1h-3zM8 4h1v1h-1zM10 4h1v1h-1zM12 4h3v1h-3zM17 4h2v1h-2zM20 4h1v1h-1zM22 4h1v1h-1zM24 4h1v1h-1zM26 4h3v1h-3zM30 4h1v1h-1zM2 5h1v1h-1zM4 5h3v1h-3zM8 5h1v1h-1zM10 5h1v1h-1zM12 5h2v1h-2zM15 5h2v1h-2zM19 5h2v1h-2zM22 5h1v1h-1zM24 5h1v1h-1zM26 5h3v1h-3zM30 5h1v1h-1zM2 6h1v1h-1zM4 6h3v1h-3zM8 6h1v1h-1zM10 6h6v1h-6zM18 6h2v1h-2zM21 6h1v1h-1zM24 6h1v1h-1zM26 6h3v1h-3zM30 6h1v1h-1zM2 7h1v1h-1zM8 7h1v1h-1zM10 7h1v1h-1zM12 7h2v1h-2zM15 7h4v1h-4zM20 7h1v1h-1zM24 7h1v1h-1zM30 7h1v1h-1zM2 8h7v1h-7zM10 8h1v1h-1zM12 8h1v1h-1zM14 8h1v1h-1zM16 8h1v1h-1zM18 8h1v1h-1zM20 8h1v1h-1zM22 8h1v1h-1zM24 8h7v1h-7zM10 9h1v1h-1zM12 9h1v1h-1zM16 9h2v1h-2zM21 9h2v1h-2zM2 10h1v1h-1zM4 10h5v1h-5zM12 10h2v1h-2zM17 10h1v1h-1zM19 10h2v1h-2zM22 10h1v1h-1zM24 10h5v1h-5zM2 11h6v1h-6zM9 11h1v1h-1zM11 11h5v1h-5zM18 11h1v1h-1zM21 11h1v1h-1zM23 11h4v1h-4zM30 11h1v1h-1zM2 12h3v1h-3zM8 12h1v1h-1zM10 12h2v1h-2zM13 12h1v1h-1zM15 12h3v1h-3zM20 12h1v1h-1zM22 12h1v1h-1zM25 12h2v1h-2zM4 13h2v1h-2zM7 13h1v1h-1zM9 13h1v1h-1zM12 13h2v1h-2zM15 13h1v1h-1zM17 13h1v1h-1zM25 13h1v1h-1zM27 13h1v1h-1zM29 13h1v1h-1zM3 14h1v1h-1zM6 14h1v1h-1zM8 14h3v1h-3zM12 14h2v1h-2zM16 14h1v1h-1zM19 14h2v1h-2zM22 14h2v1h-2zM27 14h2v1h-2zM4 15h1v1h-1zM7 15h1v1h-1zM9 15h1v1h-1zM14 15h1v1h-1zM17 15h2v1h-2zM21 15h1v1h-1zM23 15h4v1h-4zM30 15h1v1h-1zM5 16h2v1h-2zM8 16h1v1h-1zM10 16h5v1h-5zM17 16h2v1h-2zM24 16h1v1h-1zM27 16h2v1h-2zM2 17h1v1h-1zM5 17h2v1h-2zM9 17h2v1h-2zM16 17h3v1h-3zM21 17h1v1h-1zM24 17h2v1h-2zM29 17h1v1h-1zM4 18h3v1h-3zM8 18h1v1h-1zM11 18h4v1h-4zM18 18h3v1h-3zM22 18h2v1h-2zM27 18h2v1h-2zM2 19h2v1h-2zM5 19h2v1h-2zM9 19h1v1h-1zM11 19h1v1h-1zM15 19h2v1h-2zM21 19h1v1h-1zM24 19h1v1h-1zM26 19h1v1h-1zM28 19h1v1h-1zM30 19h1v1h-1zM2 20h1v1h-1zM5 20h1v1h-1zM8 20h2v1h-2zM11 20h1v1h-1zM15 20h3v1h-3zM19 20h1v1h-1zM22 20h1v1h-1zM25 20h2v1h-2zM28 20h1v1h-1zM2 21h1v1h-1zM6 21h1v1h-1zM11 21h2v1h-2zM15 21h1v1h-1zM17 21h2v1h-2zM20 21h1v1h-1zM22 21h2v1h-2zM26 21h1v1h-1zM29 21h1v1h-1zM2 22h1v1h-1zM4 22h2v1h-2zM8 22h2v1h-2zM13 22h1v1h-1zM16 22h5v1h-5zM22 22h5v1h-5zM28 22h3v1h-3zM10 23h2v1h-2zM14 23h1v1h-1zM18 23h2v1h-2zM21 23h2v1h-2zM26 23h5v1h-5zM2 24h7v1h-7zM13 24h2v1h-2zM17 24h1v1h-1zM19 24h1v1h-1zM21 24h2v1h-2zM24 24h1v1h-1zM26 24h3v1h-3zM2 25h1v1h-1zM8 25h1v1h-1zM10 25h1v1h-1zM13 25h2v1h-2zM16 25h2v1h-2zM22 25h1v1h-1zM26 25h1v1h-1zM29 25h2v1h-2zM2 26h1v1h-1zM4 26h3v1h-3zM8 26h1v1h-1zM10 26h1v1h-1zM13 26h2v1h-2zM18 26h2v1h-2zM22 26h5v1h-5zM28 26h1v1h-1zM2 27h1v1h-1zM4 27h3v1h-3zM8 27h1v1h-1zM10 27h4v1h-4zM15 27h2v1h-2zM18 27h1v1h-1zM21 27h1v1h-1zM23 27h1v1h-1zM27 27h4v1h-4zM2 28h1v1h-1zM4 28h3v1h-3zM8 28h1v1h-1zM10 28h4v1h-4zM16 28h3v1h-3zM24 28h6v1h-6zM2 29h1v1h-1zM8 29h1v1h-1zM14 29h1v1h-1zM16 29h3v1h-3zM20 29h6v1h-6zM27 29h1v1h-1zM29 29h1v1h-1zM2 30h7v1h-7zM10 30h1v1h-1zM12 30h1v1h-1zM15 30h3v1h-3zM19 30h1v1h-1zM25 30h4v1h-4z"/></svg><figcaption>Mit dem Handy scannen</figcaption></figure>
-        </div>
     </div>
   </section>
 
@@ -729,24 +813,34 @@ Antwort per WhatsApp an +49 171 …</pre>
 
   <section id="einblick" aria-labelledby="einblick-titel">
     <div class="wrap">
-      <h2 id="einblick-titel">So sieht das bei dir aus.</h2>
-      <p class="sub">Ansichten mit Musterdaten, gestaltet wie die Nachrichten und E-Mails, die deine Anlage bekommt.</p>
-      <figure class="gal-full">
-        <img src="/bilder/ablauf.webp" width="1100" height="442" loading="lazy" decoding="async" alt="Der Ablauf in vier Schritten: Spieler schreibt per WhatsApp, Paola sammelt die Angaben, die Anlage bekommt täglich eine Mail mit Importdatei, Import in Playtomic.">
-      </figure>
-      <div class="gal" role="region" aria-label="Beispielansichten, seitlich wischen" tabindex="0">
-        <figure>
-          <img src="/bilder/chat-anmeldung.webp" width="560" height="909" loading="lazy" decoding="async" alt="WhatsApp-Chat mit Paola: Anbieter wählen, Name und E-Mail bestätigen, TAN eingeben, Anmeldung abgeschlossen.">
-          <figcaption><b>Die Anmeldung im Chat</b>Anbieter wählen, Angaben prüfen, TAN eintragen. Das Format wird sofort kontrolliert.</figcaption>
-        </figure>
-        <figure>
-          <img src="/bilder/import-mail.webp" width="560" height="657" loading="lazy" decoding="async" alt="E-Mail an die Anlage mit vier neuen Anmeldungen als Tabelle aus Name, Anbieter und TAN sowie der Importdatei als CSV-Anhang.">
-          <figcaption><b>Die tägliche Importdatei</b>Neue Anmeldungen mit TAN-Liste und CSV im Anhang, bereit für den Import in Playtomic.</figcaption>
-        </figure>
-        <figure>
-          <img src="/bilder/ticket-mail.webp" width="560" height="1150" loading="lazy" decoding="async" alt="Ticket-Mail an die Anlage: Anliegen, Dringlichkeit, To-do, Einschätzung, Kontaktdaten mit Antwortknöpfen für E-Mail und WhatsApp sowie der Gesprächsverlauf.">
-          <figcaption><b>Wenn ein Mensch gefragt ist</b>Ticket mit Anliegen, Dringlichkeit und To-do. Antworten geht per E-Mail oder WhatsApp, schon vorausgefüllt.</figcaption>
-        </figure>
+      <h2 id="einblick-titel">Vom Spieler zur Importdatei in vier Schritten.</h2>
+      <ol class="steps">
+        <li><span class="n">01</span><h3>Spieler schreibt</h3><p>Per WhatsApp, ohne App und Login. Paola begrüßt und fragt nach dem Anbieter.</p><i>WhatsApp</i></li>
+        <li><span class="n">02</span><h3>Paola sammelt</h3><p>Anbieter, Name, E-Mail des Playtomic-Kontos und TAN oder ID, mit Formatprüfung und Bestätigung.</p><i>Chat</i></li>
+        <li><span class="n">03</span><h3>Du bekommst eine Mail</h3><p>Einmal am Tag: die Importdatei als CSV plus TAN-Liste, fertig für Playtomic.</p><i>E-Mail</i></li>
+        <li><span class="n">04</span><h3>Import in Playtomic</h3><p>Kunden, Importe, neue Kunden importieren. Dauert rund 20 Sekunden statt Handarbeit.</p><i>Playtomic Manager</i></li>
+      </ol>
+      <p class="steps-note">Die Prüfung der TAN beim Anbieter und der Import in Playtomic bleiben bei der Anlage.</p>
+
+      <div class="mailview">
+        <div class="mv-copy">
+          <p class="status">Dein Postfach</p>
+          <h3 class="mv-h">So sehen die Mails bei dir aus.</h3>
+          <p>Ansichten mit Musterdaten, gestaltet wie in deinem Mail-Programm im Dunkelmodus. Tippe auf eine Mail.</p>
+          <div class="mv-tabs" role="tablist" aria-label="Beispiel-Mails">
+            <button class="mv-tab" role="tab" id="mt1" aria-controls="mp1" aria-selected="true" type="button"><b>Die tägliche Importdatei</b><span>Neue Anmeldungen, TAN-Liste, CSV</span></button>
+            <button class="mv-tab" role="tab" id="mt2" aria-controls="mp2" aria-selected="false" type="button"><b>Wenn ein Mensch gefragt ist</b><span>Ticket mit To-do und Antwortknöpfen</span></button>
+          </div>
+          <p class="mv-benefit" id="mv-benefit" aria-live="polite"></p>
+        </div>
+        <div class="mv-shot">
+          <figure class="mv-panel" role="tabpanel" id="mp1" aria-labelledby="mt1" data-text="Alle Anmeldungen seit gestern auf einen Blick, dazu die Importdatei als Anhang. Du lädst sie in Playtomic hoch, fertig.">
+            <img src="/bilder/import-mail.webp" width="400" height="700" loading="lazy" decoding="async" alt="E-Mail an die Anlage mit vier neuen Anmeldungen als Tabelle aus Name, Anbieter und TAN sowie der Importdatei als CSV-Anhang.">
+          </figure>
+          <figure class="mv-panel" role="tabpanel" id="mp2" aria-labelledby="mt2" data-text="Paola fasst das Anliegen zusammen, schätzt die Dringlichkeit ein und nennt das To-do. Antworten geht per E-Mail oder WhatsApp, schon vorausgefüllt." hidden>
+            <img src="/bilder/ticket-mail.webp" width="400" height="1257" loading="lazy" decoding="async" alt="Ticket-Mail an die Anlage: Anliegen, Dringlichkeit, To-do, Einschätzung, Kontaktdaten mit Antwortknöpfen für E-Mail und WhatsApp sowie der Gesprächsverlauf.">
+          </figure>
+        </div>
       </div>
     </div>
   </section>
@@ -757,14 +851,20 @@ Antwort per WhatsApp an +49 171 …</pre>
       <p class="sub">Stell die Regler auf deine Anlage. Beispielrechnung: Aus etwa 3 Minuten Handarbeit pro Anmeldung werden rund 20 Sekunden Import, das sind bis zu 90 % weniger Aufwand. Bei Spielerfragen rechnen wir mit bis zu 70 %, die der Assistent allein beantwortet.</p>
       <div class="calc">
         <div>
+          <fieldset class="role presets" id="presets">
+            <legend>Wie groß ist deine Anlage?</legend>
+            <button type="button" data-anm="12" data-fra="8" aria-pressed="false"><b>Kleine Anlage</b>12 Anmeldungen pro Woche, 8 Fragen am Tag</button>
+            <button type="button" data-anm="30" data-fra="20" aria-pressed="true"><b>Mittlere Anlage</b>30 Anmeldungen pro Woche, 20 Fragen am Tag</button>
+            <button type="button" data-anm="50" data-fra="35" aria-pressed="false"><b>Große Anlage</b>50 Anmeldungen pro Woche, 35 Fragen am Tag</button>
+          </fieldset>
           <fieldset class="role" id="role">
             <legend>Wer erledigt das heute bei dir?</legend>
             <button type="button" data-eur="18" aria-pressed="false"><b>Team am Empfang</b>ca. 18 € pro Stunde inkl. Nebenkosten</button>
             <button type="button" data-eur="45" aria-pressed="true"><b>Ich selbst</b>Inhaber oder Geschäftsführung, ca. 45 € pro Stunde</button>
           </fieldset>
-          <div class="ctl"><label for="c-anm">Neue Anmeldungen pro Woche <output id="o-anm" for="c-anm"></output></label><input id="c-anm" type="range" min="3" max="80" step="1" value="15"></div>
+          <div class="ctl"><label for="c-anm">Neue Anmeldungen pro Woche <output id="o-anm" for="c-anm"></output></label><input id="c-anm" type="range" min="3" max="80" step="1" value="30"></div>
           <div class="ctl"><label for="c-ma">Minuten pro Anmeldung, mit Rückfragen und TAN-Prüfung <output id="o-ma" for="c-ma"></output></label><input id="c-ma" type="range" min="1" max="8" step="0.5" value="3"></div>
-          <div class="ctl"><label for="c-fra">Fragen von Spielern pro Tag <output id="o-fra" for="c-fra"></output></label><input id="c-fra" type="range" min="0" max="50" step="1" value="10"></div>
+          <div class="ctl"><label for="c-fra">Fragen von Spielern pro Tag <output id="o-fra" for="c-fra"></output></label><input id="c-fra" type="range" min="0" max="50" step="1" value="20"></div>
           <div class="ctl"><label for="c-mf">Minuten pro Frage <output id="o-mf" for="c-mf"></output></label><input id="c-mf" type="range" min="1" max="6" step="0.5" value="2"></div>
           <div class="ctl"><label for="c-eur">Was dich eine Stunde kostet <output id="o-eur" for="c-eur"></output></label><input id="c-eur" type="range" min="14" max="100" step="1" value="45"></div>
         </div>
@@ -890,7 +990,8 @@ Antwort per WhatsApp an +49 171 …</pre>
 
 <div class="dock" id="dock" aria-hidden="true">
   <span>Fragen zu deiner Anlage?</span>
-  <a class="btn" href="#kontakt" data-interest="15-Minuten-Gespräch" tabindex="-1">15-Min.-Gespräch</a>
+  <a class="btn wa" href="https://wa.me/4915216409156?text=Hallo" target="_blank" rel="noopener" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true" class="wa-i"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.4-.2Z"/></svg>Paola testen</a>
+  <a class="btn ghost" href="#kontakt" data-interest="15-Minuten-Gespräch" tabindex="-1">Gespräch</a>
 </div>
 
 <footer id="rechtliches">
@@ -950,7 +1051,7 @@ Antwort per WhatsApp an +49 171 …</pre>
   if ('IntersectionObserver' in window) {
     var heroGone = false, contactIn = false, overlap = false;
     // Leiste nie über Buttons, Reglern oder Eingabefeldern
-    var hits = Array.prototype.slice.call(document.querySelectorAll('main a.btn, main button, main input, main select, main textarea, main .live-hint, main .live-qr, main .textlink'));
+    var hits = Array.prototype.slice.call(document.querySelectorAll('main a.btn, main button, main input, main select, main textarea, main .live-hint, main .live-qr, main .try-qr, main .textlink'));
     function checkOverlap() {
       var vh = window.innerHeight, dh = dock.offsetHeight || 70, dl = dock.getBoundingClientRect().left;
       var top = vh - dh - (window.innerWidth >= 700 ? 26 : 0) - 8;
@@ -965,7 +1066,7 @@ Antwort per WhatsApp an +49 171 …</pre>
       var on = heroGone && !contactIn && !overlap;
       dock.classList.toggle('on', on);
       dock.setAttribute('aria-hidden', on ? 'false' : 'true');
-      dock.querySelector('a').tabIndex = on ? 0 : -1;
+      Array.prototype.forEach.call(dock.querySelectorAll('a'), function (a) { a.tabIndex = on ? 0 : -1; });
     }
     new IntersectionObserver(function (e) { heroGone = !e[0].isIntersecting && e[0].boundingClientRect.top < 0; syncDock(); })
       .observe(document.querySelector('.hero .actions'));
@@ -975,7 +1076,7 @@ Antwort per WhatsApp an +49 171 …</pre>
       contactIn = Object.keys(seen).some(function (k) { return seen[k]; }); syncDock();
     });
     // Aus beim Kontakt, in der Fußzeile und überall dort, wo die Leiste Regler oder Buttons verdecken würde
-    var dockOff = ['#kontakt', 'footer', '#rechner .calc', '.live'];
+    var dockOff = ['#kontakt', 'footer', '#rechner .calc', '.live', '#ausprobieren'];
     dockOff.forEach(function (sel) {
       document.querySelectorAll(sel).forEach(function (el, i) { el.setAttribute('data-dk', sel + i); io2.observe(el); });
     });
@@ -1081,6 +1182,39 @@ Antwort per WhatsApp an +49 171 …</pre>
     io.observe(document.getElementById('phone'));
   }
 
+
+  // Wechselndes Wort in der Überschrift (Grundtext "nachts" bleibt für Suchmaschinen stehen)
+  var rot = document.getElementById('rot');
+  if (rot && !reduce) {
+    var words = ['nachts', 'sonntags', 'an Feiertagen', 'im Urlaub', 'wenn du Training gibst'], wi = 0;
+    setInterval(function () {
+      rot.classList.add('out');
+      setTimeout(function () { wi = (wi + 1) % words.length; rot.textContent = words[wi]; rot.classList.remove('out'); }, 320);
+    }, 2800);
+  }
+
+  // Versprechen: sanftes Einblenden
+  var rv2 = document.querySelectorAll('.rv2');
+  if ('IntersectionObserver' in window && !reduce) {
+    document.documentElement.classList.add('js-rv');
+    var rio = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); rio.unobserve(e.target); } }); }, { threshold: 0.2 });
+    rv2.forEach(function (el, i) { el.style.transitionDelay = (i % 2) * 90 + 'ms'; rio.observe(el); });
+  } else { rv2.forEach(function (el) { el.classList.add('in'); }); }
+
+  // Mail-Ansichten: Umschalter statt Wischen
+  var mvTabs = Array.prototype.slice.call(document.querySelectorAll('.mv-tab'));
+  var mvBen = document.getElementById('mv-benefit');
+  function mvSelect(i) {
+    mvTabs.forEach(function (t, k) {
+      var p = document.getElementById(t.getAttribute('aria-controls'));
+      t.setAttribute('aria-selected', k === i ? 'true' : 'false');
+      p.hidden = k !== i;
+      if (k === i && mvBen) mvBen.textContent = p.getAttribute('data-text') || '';
+    });
+  }
+  mvTabs.forEach(function (t, i) { t.addEventListener('click', function () { mvSelect(i); }); });
+  if (mvTabs.length) mvSelect(0);
+
   // Rechner
   function $(id) { return document.getElementById(id); }
   function fmt(n, d) { return n.toLocaleString('de-DE', { minimumFractionDigits: d, maximumFractionDigits: d }); }
@@ -1090,7 +1224,16 @@ Antwort per WhatsApp an +49 171 …</pre>
   }
   var roleBtns = Array.prototype.slice.call(document.querySelectorAll('#role button'));
   function syncRole(eur) {
-    roleBtns.forEach(function (b) { b.setAttribute('aria-pressed', +b.getAttribute('data-eur') === eur ? 'true' : 'false'); });
+    var presetBtns = Array.prototype.slice.call(document.querySelectorAll('#presets button'));
+  function syncPreset() {
+    presetBtns.forEach(function (b) {
+      b.setAttribute('aria-pressed', (+b.getAttribute('data-anm') === +$('c-anm').value && +b.getAttribute('data-fra') === +$('c-fra').value) ? 'true' : 'false');
+    });
+  }
+  presetBtns.forEach(function (b) {
+    b.addEventListener('click', function () { $('c-anm').value = b.getAttribute('data-anm'); $('c-fra').value = b.getAttribute('data-fra'); calc(); });
+  });
+  roleBtns.forEach(function (b) { b.setAttribute('aria-pressed', +b.getAttribute('data-eur') === eur ? 'true' : 'false'); });
   }
   function calc() {
     var anm = +$('c-anm').value, ma = +$('c-ma').value, fra = +$('c-fra').value, mf = +$('c-mf').value, eur = +$('c-eur').value;
@@ -1100,6 +1243,7 @@ Antwort per WhatsApp an +49 171 …</pre>
     $('o-mf').textContent = fmt(mf, mf % 1 ? 1 : 0) + ' Min.';
     $('o-eur').textContent = eur + ' €';
     syncRole(eur);
+    if (typeof syncPreset === 'function') syncPreset();
     var h = hours(anm, ma, fra, mf);
     var year = h.t * 12, days = year / 8;
     var ht = Math.round(h.t), fr = Math.round(h.f), an = ht - fr;
@@ -1113,7 +1257,7 @@ Antwort per WhatsApp an +49 171 …</pre>
   });
   ['c-anm', 'c-ma', 'c-fra', 'c-mf', 'c-eur'].forEach(function (id) { $(id).addEventListener('input', calc); });
   calc();
-  var hh = hours(15, 3, 10, 2).t;
+  var hh = hours(30, 3, 20, 2).t;
   $('hero-h').textContent = 'bis zu ' + fmt(Math.round(hh), 0) + ' Stunden pro Monat';
   $('hero-e').textContent = 'und rund ' + fmt(Math.round(hh * 45 / 50) * 50, 0) + ' € Arbeitszeit';
 
