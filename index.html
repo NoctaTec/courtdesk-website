@@ -556,7 +556,7 @@ h1 .rot.out { opacity: 0; transform: translateY(.18em); }
       <a href="#zeit">Zeitersparnis</a>
       <a href="#anwendung">So funktioniert’s</a>
       <a href="#rechner">Rechner</a>
-      <a href="#roadmap">Roadmap</a>
+      <a href="/roadmap/">Roadmap</a>
       <a href="#fragen">Fragen</a>
       <a href="/firmenfitness-automatisierung/">Firmenfitness</a>
       <a href="#kontakt">Kontakt</a>
@@ -580,7 +580,7 @@ h1 .rot.out { opacity: 0; transform: translateY(.18em); }
           <a class="textlink" href="#video">Demo-Video ansehen</a>
           <a class="textlink" href="#rechner">Ersparnis berechnen</a>
         </div>
-        <p class="save"><b id="hero-h">bis zu 20 Stunden pro Monat</b><span id="hero-e">und rund 900 € Arbeitszeit</span> gewinnt eine größere Anlage in unserer Beispielrechnung zurück, bei 30 Anmeldungen pro Woche und 20 Fragen am Tag. <a href="#rechner">Mit deinen Zahlen rechnen</a></p>
+        <p class="save"><b id="hero-h">bis zu 23 Stunden pro Monat</b><span id="hero-e">und mehr als 1.000 € Arbeitszeit</span> gewinnt eine größere Anlage in unserer Beispielrechnung zurück, bei 30 Anmeldungen pro Woche und 25 Fragen am Tag. <a href="#rechner">Mit deinen Zahlen rechnen</a></p>
       </div>
 
       <div class="frame-wrap">
@@ -832,6 +832,7 @@ Antwort per WhatsApp an +49 171 …</pre>
             <button class="mv-tab" role="tab" id="mt2" aria-controls="mp2" aria-selected="false" type="button"><b>Wenn ein Mensch gefragt ist</b><span>Ticket mit To-do und Antwortknöpfen</span></button>
           </div>
           <p class="mv-benefit" id="mv-benefit" aria-live="polite"></p>
+          <p><a class="textlink" href="/ticketsystem-padelhalle/">Mehr zum Ticketsystem</a></p>
         </div>
         <div class="mv-shot">
           <figure class="mv-panel" role="tabpanel" id="mp1" aria-labelledby="mt1" data-text="Alle Anmeldungen seit gestern auf einen Blick, dazu die Importdatei als Anhang. Du lädst sie in Playtomic hoch, fertig.">
@@ -854,8 +855,8 @@ Antwort per WhatsApp an +49 171 …</pre>
           <fieldset class="role presets" id="presets">
             <legend>Wie groß ist deine Anlage?</legend>
             <button type="button" data-anm="12" data-fra="8" aria-pressed="false"><b>Kleine Anlage</b>12 Anmeldungen pro Woche, 8 Fragen am Tag</button>
-            <button type="button" data-anm="30" data-fra="20" aria-pressed="true"><b>Mittlere Anlage</b>30 Anmeldungen pro Woche, 20 Fragen am Tag</button>
-            <button type="button" data-anm="50" data-fra="35" aria-pressed="false"><b>Große Anlage</b>50 Anmeldungen pro Woche, 35 Fragen am Tag</button>
+            <button type="button" data-anm="30" data-fra="25" aria-pressed="true"><b>Mittlere Anlage</b>30 Anmeldungen pro Woche, 25 Fragen am Tag</button>
+            <button type="button" data-anm="50" data-fra="40" aria-pressed="false"><b>Große Anlage</b>50 Anmeldungen pro Woche, 40 Fragen am Tag</button>
           </fieldset>
           <fieldset class="role" id="role">
             <legend>Wer erledigt das heute bei dir?</legend>
@@ -864,7 +865,7 @@ Antwort per WhatsApp an +49 171 …</pre>
           </fieldset>
           <div class="ctl"><label for="c-anm">Neue Anmeldungen pro Woche <output id="o-anm" for="c-anm"></output></label><input id="c-anm" type="range" min="3" max="80" step="1" value="30"></div>
           <div class="ctl"><label for="c-ma">Minuten pro Anmeldung, mit Rückfragen und TAN-Prüfung <output id="o-ma" for="c-ma"></output></label><input id="c-ma" type="range" min="1" max="8" step="0.5" value="3"></div>
-          <div class="ctl"><label for="c-fra">Fragen von Spielern pro Tag <output id="o-fra" for="c-fra"></output></label><input id="c-fra" type="range" min="0" max="50" step="1" value="20"></div>
+          <div class="ctl"><label for="c-fra">Fragen von Spielern pro Tag <output id="o-fra" for="c-fra"></output></label><input id="c-fra" type="range" min="0" max="50" step="1" value="25"></div>
           <div class="ctl"><label for="c-mf">Minuten pro Frage <output id="o-mf" for="c-mf"></output></label><input id="c-mf" type="range" min="1" max="6" step="0.5" value="2"></div>
           <div class="ctl"><label for="c-eur">Was dich eine Stunde kostet <output id="o-eur" for="c-eur"></output></label><input id="c-eur" type="range" min="14" max="100" step="1" value="45"></div>
         </div>
@@ -885,30 +886,12 @@ Antwort per WhatsApp an +49 171 …</pre>
 
   <section id="roadmap" class="graphite" aria-labelledby="roadmap-titel">
     <div class="wrap">
-      <h2 id="roadmap-titel">Was CourtDesk kann und was als Nächstes kommt</h2>
-      <div class="road">
-        <div class="now">
-          <h3>Verfügbar</h3>
-          <ul>
-            <li>Anmeldung für Wellpass und Hansefit/Epassi im Chat mit Prüfung von Name, E-Mail und TAN-Format</li>
-            <li>Antworten auf Standardfragen aus den Infos deiner Anlage</li>
-            <li>Persönliche Antwort zu Rabatt und Check-in je nach Mitgliedschaft</li>
-            <li>Antworten in der Sprache des Spielers</li>
-            <li>Übergabe an dein Team bei Sonderfällen, mit Ticketnummer und Mail samt Zusammenfassung, Kontaktdaten und vorausgefüllter Antwort per E-Mail oder WhatsApp</li>
-            <li>Täglicher Versand der Importdatei für Playtomic mit TAN-Liste</li>
-          </ul>
-        </div>
-        <div class="next">
-          <h3>In Entwicklung</h3>
-          <ul>
-            <li>Auswertung für deine Anlage mit Anmeldungen, häufigsten Fragen und gesparter Zeit</li>
-            <li>Gesprächsverlauf mit Paolas Antworten direkt im Ticket</li>
-          </ul>
-        </div>
-      </div>
-      <div class="wish">
-        <p>Was fehlt dir im Alltag deiner Anlage? Die nächsten Funktionen richten sich nach den Wünschen der Anlagen, die CourtDesk nutzen.</p>
-        <a class="btn ghost" href="#kontakt" data-interest="Funktionswunsch">Wunsch schicken</a>
+      <h2 id="roadmap-titel">Was läuft und was als Nächstes kommt.</h2>
+      <p class="sub">Anmeldung per Chat, Standardfragen, Übergabe ans Team und die tägliche Importdatei laufen heute. Auswertung für deine Anlage und der Gesprächsverlauf im Ticket sind in Entwicklung. Die nächsten Funktionen richten sich nach den Wünschen der Anlagen.</p>
+      <div class="actions">
+        <a class="btn" href="/roadmap/">Zur Roadmap</a>
+        <a class="btn ghost" href="/ticketsystem-padelhalle/">Das Ticketsystem im Detail</a>
+        <a class="textlink" href="#kontakt" data-interest="Funktionswunsch">Wunsch schicken</a>
       </div>
     </div>
   </section>
@@ -1015,7 +998,7 @@ Antwort per WhatsApp an +49 171 …</pre>
       </div>
     </details>
 
-    <p class="flinks"><a href="/firmenfitness-automatisierung/">Firmenfitness</a> <a href="/egym-wellpass-playtomic/">EGYM Wellpass</a> <a href="/hansefit-epassi-playtomic/">Hansefit/Epassi</a> <a href="/firmenfitness-automatisierung/#ratgeber">Ratgeber</a> <a href="/datenschutz.html">Datenschutz</a></p>
+    <p class="flinks"><a href="/firmenfitness-automatisierung/">Firmenfitness</a> <a href="/egym-wellpass-playtomic/">EGYM Wellpass</a> <a href="/hansefit-epassi-playtomic/">Hansefit/Epassi</a> <a href="/ticketsystem-padelhalle/">Ticketsystem</a> <a href="/roadmap/">Roadmap</a> <a href="/firmenfitness-automatisierung/#ratgeber">Ratgeber</a> <a href="/datenschutz.html">Datenschutz</a></p>
 
     <div class="group-strip"><a class="gs-main" href="https://vespasian-group.de">Ein Bereich der Vespasian Group <span aria-hidden="true">→</span></a><span class="gs-links"><a href="https://www.vespasian-immobilien.de">Vespasian Immobilien</a><a href="https://vespasian-advisory.de">Vespasian Advisory</a><a href="https://vespasian-invest.de">Vespasian Invest</a><a href="https://www.noctatec.de">NoctaTec</a></span></div>
     <p class="tm">© 2026 NoctaTec und CourtDesk sind Marken der TF Vespasian Vermögensverwaltungs-GmbH. CourtDesk ist ein Produkt von NoctaTec. WhatsApp, Wellpass, Hansefit, Epassi und Playtomic sind Marken ihrer jeweiligen Inhaber. CourtDesk steht in keiner Verbindung zu diesen Unternehmen und wird nicht von ihnen gefördert.</p>
@@ -1257,9 +1240,9 @@ Antwort per WhatsApp an +49 171 …</pre>
   });
   ['c-anm', 'c-ma', 'c-fra', 'c-mf', 'c-eur'].forEach(function (id) { $(id).addEventListener('input', calc); });
   calc();
-  var hh = hours(30, 3, 20, 2).t;
+  var hh = hours(30, 3, 25, 2).t;
   $('hero-h').textContent = 'bis zu ' + fmt(Math.round(hh), 0) + ' Stunden pro Monat';
-  $('hero-e').textContent = 'und rund ' + fmt(Math.round(hh * 45 / 50) * 50, 0) + ' € Arbeitszeit';
+  $('hero-e').textContent = 'und mehr als ' + fmt(Math.floor(Math.round(hh) * 45 / 100) * 100, 0) + ' € Arbeitszeit';
 
 
   // Hero-Platz: Zeichnen beim Laden, Status-Chips im Wechsel

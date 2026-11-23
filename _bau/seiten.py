@@ -120,7 +120,7 @@ def page(slug, title, desc, crumb, body, faq, parent=True):
 </div>
 <p class="muted tm">{TM}</p>
 </div></main>
-<footer><div class="wrap"><a href="/">courtdesk.de</a><a href="/firmenfitness-automatisierung/">Firmenfitness</a><a href="/egym-wellpass-playtomic/">Wellpass</a><a href="/hansefit-epassi-playtomic/">Hansefit</a><a href="/whatsapp-assistent-padelhalle/">WhatsApp-Assistent</a><a href="/firmenfitness-automatisierung/#ratgeber">Ratgeber</a><a href="/#impressum">Impressum</a><a href="/datenschutz.html">Datenschutz</a></div></footer>
+<footer><div class="wrap"><a href="/">courtdesk.de</a><a href="/firmenfitness-automatisierung/">Firmenfitness</a><a href="/egym-wellpass-playtomic/">Wellpass</a><a href="/hansefit-epassi-playtomic/">Hansefit</a><a href="/whatsapp-assistent-padelhalle/">WhatsApp-Assistent</a><a href="/ticketsystem-padelhalle/">Ticketsystem</a><a href="/roadmap/">Roadmap</a><a href="/firmenfitness-automatisierung/#ratgeber">Ratgeber</a><a href="/#impressum">Impressum</a><a href="/datenschutz.html">Datenschutz</a></div></footer>
 {ZAEHLER}
 </body>
 </html>

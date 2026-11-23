@@ -211,3 +211,77 @@ page(
          "Das unterstützt CourtDesk noch nicht. Schick uns gern einen Funktionswunsch."),
     ],
 )
+
+
+# ---------- Ticketsystem ----------
+page(
+    "ticketsystem-padelhalle",
+    "Ticketsystem für Padelhallen: Übergabe vom WhatsApp-Assistenten ans Team | CourtDesk",
+    "So übergibt der WhatsApp-Assistent Sonderfälle an dein Team: Ticket mit Nummer, Zusammenfassung, Dringlichkeit, To-do und vorausgefüllter Antwort per E-Mail oder WhatsApp.",
+    "Ticketsystem",
+    """<p class="status">Produkt · Übergabe ans Team</p>
+<h1>Wenn ein Mensch gefragt ist, kommt alles bei dir an.</h1>
+<p class="lead">Nicht jede Frage soll ein Assistent beantworten. Gruppenanfragen, Beschwerden und Sonderwünsche gehen als Ticket an dein Team, vollständig und mit einer Antwort, die schon vorbereitet ist.</p>
+
+<h2>So läuft eine Übergabe.</h2>
+<ol class="steps">
+  <li><b>Der Spieler fragt nach einem Menschen</b> oder stellt eine Frage, die Paola nicht beantworten soll.</li>
+  <li><b>Paola fragt nach dem Anliegen</b> und der E-Mail-Adresse und legt ein Ticket mit eigener Nummer an.</li>
+  <li><b>Dein Team bekommt eine Mail</b> mit Anliegen, Dringlichkeit, To-do, Kontaktdaten und den letzten Nachrichten des Spielers.</li>
+  <li><b>Ein Klick genügt zum Antworten:</b> per E-Mail oder per WhatsApp, Betreff und Text sind schon vorausgefüllt.</li>
+</ol>
+
+<h2>So sieht das Ticket aus.</h2>
+<p>Ansicht mit Musterdaten, im Dunkelmodus eines Handys.</p>
+<p><img src="/bilder/ticket-mail.webp" width="400" height="1257" alt="Ticket-Mail an die Anlage: Anliegen, Dringlichkeit, To-do, Einschätzung, Kontakt mit Antwortknöpfen und Gesprächsverlauf" loading="lazy" style="display:block;width:100%;max-width:400px;height:auto;border:1px solid rgba(255,255,255,.16)"></p>
+
+<h2>Was dein Team davon hat.</h2>
+<ul>
+  <li>Keine Rückfragen: Anliegen und Kontakt stehen vollständig in der Mail.</li>
+  <li>Keine vergessenen Rückrufe: Jedes Ticket hat eine Nummer und eine Dringlichkeit.</li>
+  <li>Schnell geantwortet: Zwei Knöpfe, vorausgefüllt, du musst nur noch senden.</li>
+</ul>
+<p>Die Zusammenfassung stammt von einer KI und kann Fehler enthalten. Deshalb stehen die Original-Nachrichten des Spielers direkt darunter. In Entwicklung ist, dass auch Paolas Antworten im Gesprächsverlauf des Tickets erscheinen.</p>
+<p>Mehr dazu: <a href="/whatsapp-assistent-padelhalle/">WhatsApp-Assistent</a> · <a href="/roadmap/">Roadmap</a> · <a href="/#kontakt">15-Minuten-Gespräch</a></p>""",
+    [
+        ("Wie schnell erfährt mein Team von einem Ticket?", "Die Mail geht sofort raus, sobald der Spieler sein Anliegen und seine E-Mail-Adresse genannt hat. Wann dein Team antwortet, bestimmt ihr selbst."),
+        ("Kann ich direkt auf WhatsApp antworten?", "Ja. Die Mail enthält einen Knopf, der den Chat mit dem Spieler öffnet, mit einem vorbereiteten Text mit Ticketnummer."),
+        ("Ist die Zusammenfassung zuverlässig?", "Sie ist eine Hilfe, keine Garantie. Eine KI fasst zusammen und kann sich irren. Darum stehen die Original-Nachrichten des Spielers in jedem Ticket darunter."),
+    ],
+    parent=False,
+)
+
+# ---------- Roadmap ----------
+page(
+    "roadmap",
+    "Roadmap: Was CourtDesk kann und was als Nächstes kommt | CourtDesk",
+    "Der aktuelle Stand von CourtDesk: Anmeldung per WhatsApp, Standardfragen, Übergabe ans Team und Importdatei für Playtomic. Dazu das, was in Entwicklung ist.",
+    "Roadmap",
+    """<p class="status">Roadmap · Stand 24.11.2026</p>
+<h1>Was CourtDesk kann und was als Nächstes kommt.</h1>
+<p class="lead">Wir sagen dir offen, was heute läuft und was noch in Arbeit ist. Die nächsten Funktionen richten sich nach den Wünschen der Anlagen, die CourtDesk nutzen.</p>
+
+<div class="split">
+  <div class="card on"><h3>Verfügbar</h3><ul>
+    <li>Anmeldung für Wellpass und Hansefit/Epassi im Chat mit Prüfung von Name, E-Mail und TAN-Format</li>
+    <li>Antworten auf Standardfragen aus den Infos deiner Anlage</li>
+    <li>Persönliche Antwort zu Rabatt und Check-in je nach Mitgliedschaft</li>
+    <li>Antworten in der Sprache des Spielers</li>
+    <li>Übergabe an dein Team bei Sonderfällen, mit Ticketnummer, Zusammenfassung, Kontaktdaten und vorausgefüllter Antwort per E-Mail oder WhatsApp (<a href="/ticketsystem-padelhalle/">mehr zum Ticketsystem</a>)</li>
+    <li>Täglicher Versand der Importdatei für Playtomic mit TAN-Liste</li>
+  </ul></div>
+  <div class="card"><h3>In Entwicklung</h3><ul>
+    <li>Auswertung für deine Anlage mit Anmeldungen, häufigsten Fragen und gesparter Zeit</li>
+    <li>Gesprächsverlauf mit Paolas Antworten direkt im Ticket</li>
+  </ul></div>
+</div>
+
+<h2>Was fehlt dir?</h2>
+<p>Was fehlt dir im Alltag deiner Anlage? Schreib uns, wir nehmen es in die Planung auf: <a href="/#kontakt">Wunsch schicken</a>.</p>
+<p>Mehr dazu: <a href="/whatsapp-assistent-padelhalle/">WhatsApp-Assistent</a> · <a href="/ticketsystem-padelhalle/">Ticketsystem</a> · <a href="/firmenfitness-automatisierung/">Firmenfitness</a></p>""",
+    [
+        ("Gibt es CourtDesk schon?", "Ja. Anmeldung, Standardfragen, Übergabe ans Team und die tägliche Importdatei laufen. Was in Entwicklung ist, steht auf dieser Seite."),
+        ("Kann ich mir Funktionen wünschen?", "Ja. Schick uns deinen Wunsch über das Kontaktformular. Die Planung richtet sich nach den Anlagen, die CourtDesk nutzen."),
+    ],
+    parent=False,
+)
