@@ -335,7 +335,7 @@
   }
   .dock { position: fixed; left: 0; right: 0; bottom: 0; z-index: 15; display: flex; align-items: center; justify-content: space-between; gap: 1rem;
     padding: .75rem clamp(1.25rem, 4vw, 2.5rem) calc(.75rem + env(safe-area-inset-bottom, 0px)); background: rgba(0, 0, 0, .94); border-top: 1px solid var(--rule);
-    -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); transform: translateY(110%); transition: transform .25s ease; }
+    -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); transform: translateY(120%); transition: transform .25s ease; }
   .dock.on { transform: none; }
   .dock span { font-size: .9rem; line-height: 1.3; color: var(--ink); }
   .dock .btn { flex: none; padding: .85rem 1.1rem; font-size: .75rem; }
@@ -465,10 +465,9 @@ footer .flinks a:hover { color: var(--white); }
 
 /* ---- Umbau 24.11.: Überschrift, Ausprobieren, Versprechen, Schritte, Mail-Ansicht, Presets ---- */
 h1 .rot-l { display: block; white-space: nowrap; }
-h1 .rot-w { white-space: nowrap; }
-h1 .rot { color: var(--signal); display: inline-block; transition: opacity .28s ease, transform .28s ease; }
-h1 .rot.is-out { opacity: 0; transform: translateY(.22em); }
-h1 .rot.is-in { opacity: 0; transform: translateY(-.22em); transition: none; }
+h1 .rw { position: relative; display: inline-block; clip-path: inset(-.03em -2em -.11em -2em); }
+h1 .rot { display: block; white-space: nowrap; color: var(--signal); will-change: transform; }
+h1 .rot.nx { position: absolute; left: 0; top: 0; }
 .btn.wa.big { padding: 1.35rem 2.1rem; font-size: 1.15rem; }
 .actions .btn.wa { padding: 1.05rem 1.5rem; }
 .try { background: linear-gradient(180deg, #0b0c0d, #000); }
@@ -550,6 +549,13 @@ h1 .rot.is-in { opacity: 0; transform: translateY(-.22em); transition: none; }
   .head-cta { white-space: nowrap; }
 }
 .presets button { flex: 1 1 9.5rem; }
+.provs { border-bottom: 1px solid var(--rule); padding-block: 1.6rem; background: #000; }
+.provs .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: .9rem 1.6rem; }
+.provs-l { margin: 0; font: 500 .74rem/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--steel); }
+.provs ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .6rem; }
+.provs li a { display: inline-block; padding: .55rem 1rem; border: 1px solid var(--rule); font: 500 1.05rem/1 var(--sans); letter-spacing: -.01em; color: var(--white); text-decoration: none; transition: border-color .2s, background-color .2s; }
+.provs li a:hover { border-color: var(--signal); background: rgba(255,77,46,.1); }
+.provs-n { flex: 1 1 100%; margin: .2rem 0 0; font-size: .8rem; line-height: 1.5; color: var(--steel); max-width: 80ch; }
 </style>
 </head>
 <body>
@@ -582,7 +588,7 @@ h1 .rot.is-in { opacity: 0; transform: translateY(-.22em); transition: none; }
     <canvas id="hive" aria-hidden="true"></canvas>
     <div class="wrap">
       <div class="copy">
-        <h1 id="titel">Deine Halle antwortet immer.<br><span class="rot-l">Auch <span class="rot-w"><span class="rot" id="rot">nachts</span>.</span></span></h1>
+        <h1 id="titel">Deine Halle antwortet immer.<br><span class="rot-l">Auch <span class="rw" id="rw"><span class="rot" id="rot">nachts.</span></span></span></h1>
         <p class="lead">CourtDesk ist der WhatsApp-Assistent für Padel-, Tennis- und Pickleballanlagen. Er beantwortet Standardfragen rund um die Uhr, nimmt Firmenfitness-Anmeldungen von Wellpass und Hansefit/Epassi entgegen und bereitet sie für den Import in Playtomic vor. Dein Team hat wieder Zeit für die Spieler vor Ort.</p>
         <div class="actions">
           <a class="btn wa" href="https://wa.me/4915216409156?text=Hallo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" class="wa-i"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.4-.2Z"/></svg>Paola jetzt auf WhatsApp testen</a>
@@ -641,6 +647,20 @@ h1 .rot.is-in { opacity: 0; transform: translateY(-.22em); transition: none; }
     <div class="hero-ticker" aria-hidden="true"><div class="track"><span>Antworten rund um die Uhr<i>→</i></span><span>Wellpass<i>→</i></span><span>Hansefit<i>→</i></span><span>Anmeldung per WhatsApp<i>→</i></span><span>TAN-Prüfung<i>→</i></span><span>Playtomic-Import<i>→</i></span><span>Auswertung für die Anlage<i>→</i></span><span>Made in Bremen<i>→</i></span><span>Antworten rund um die Uhr<i>→</i></span><span>Wellpass<i>→</i></span><span>Hansefit<i>→</i></span><span>Anmeldung per WhatsApp<i>→</i></span><span>TAN-Prüfung<i>→</i></span><span>Playtomic-Import<i>→</i></span><span>Auswertung für die Anlage<i>→</i></span><span>Made in Bremen<i>→</i></span></div></div>
   </section>
 
+
+  <div class="provs" aria-label="Unterstützte Programme und Systeme">
+    <div class="wrap">
+      <p class="provs-l">Funktioniert mit</p>
+      <ul>
+        <li><a href="/egym-wellpass-playtomic/">Wellpass</a></li>
+        <li><a href="/hansefit-epassi-playtomic/">Hansefit</a></li>
+        <li><a href="/hansefit-epassi-playtomic/">Epassi</a></li>
+        <li><a href="/playtomic-kundenimport/">Playtomic</a></li>
+        <li><a href="/whatsapp-assistent-padelhalle/">WhatsApp</a></li>
+      </ul>
+      <p class="provs-n">Namen sind Marken ihrer Inhaber. CourtDesk ist ein unabhängiges Produkt und nicht mit ihnen verbunden. Wir arbeiten neben diesen Systemen und binden sie über Chat, Importdatei und Links an.</p>
+    </div>
+  </div>
 
   <section id="ausprobieren" class="try" aria-labelledby="try-titel">
     <div class="wrap try-grid">
@@ -1180,18 +1200,38 @@ Antwort per WhatsApp an +49 171 …</pre>
   }
 
 
-  // Wechselndes Wort in der Überschrift (Grundtext "nachts" bleibt für Suchmaschinen stehen)
-  var rot = document.getElementById('rot');
-  if (rot && !reduce) {
-    var words = ['nachts', 'sonntags', 'im Urlaub', 'am Feiertag', 'beim Training'], wi = 0;
+  // Wechselndes Wort in der Überschrift: Maske, Wort schiebt nach oben raus, nächstes von unten rein.
+  // Der Text bleibt im HTML auf "nachts." stehen (Suchmaschinen), der Rahmen hält die Breite des längsten Worts.
+  var rw = document.getElementById('rw'), rot = document.getElementById('rot');
+  if (rw && rot && !reduce && rot.animate) {
+    var words = ['nachts.', 'sonntags.', 'im Urlaub.', 'am Feiertag.', 'beim Training.'], wi = 0, busy = false;
+    function fixWidth() {
+      var m = 0;
+      words.forEach(function (w) {
+        var t = rot.cloneNode(false); t.removeAttribute('id'); t.textContent = w;
+        t.style.cssText = 'position:absolute;visibility:hidden;left:0;top:0;display:inline-block';
+        rw.appendChild(t); m = Math.max(m, t.getBoundingClientRect().width); rw.removeChild(t);
+      });
+      rw.style.width = Math.ceil(m) + 'px';
+    }
+    fixWidth();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fixWidth);
+    window.addEventListener('resize', fixWidth);
     setInterval(function () {
-      rot.classList.add('is-out');
-      setTimeout(function () {
-        wi = (wi + 1) % words.length; rot.textContent = words[wi];
-        rot.classList.remove('is-out'); rot.classList.add('is-in');
-        void rot.offsetWidth; rot.classList.remove('is-in');
-      }, 290);
-    }, 2800);
+      if (busy || document.hidden) return;
+      busy = true;
+      wi = (wi + 1) % words.length;
+      var nx = rot.cloneNode(false); nx.removeAttribute('id'); nx.className = 'rot nx'; nx.textContent = words[wi];
+      rw.appendChild(nx);
+      var opt = { duration: 650, easing: 'cubic-bezier(.7,0,.2,1)', fill: 'forwards' };
+      rot.animate([{ transform: 'translateY(0)' }, { transform: 'translateY(-120%)' }], opt);
+      var anim = nx.animate([{ transform: 'translateY(120%)' }, { transform: 'translateY(0)' }], opt);
+      anim.onfinish = function () {
+        rot.getAnimations().forEach(function (x) { x.cancel(); });
+        rot.textContent = words[wi];
+        rw.removeChild(nx); busy = false;
+      };
+    }, 3000);
   }
 
   // Versprechen: sanftes Einblenden
