@@ -464,8 +464,11 @@ footer .flinks a:hover { color: var(--white); }
   .faq-more { margin: 1.8rem 0 0; display: flex; flex-wrap: wrap; gap: .6rem 1.4rem; font: 500 .78rem/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--steel); }
 
 /* ---- Umbau 24.11.: Überschrift, Ausprobieren, Versprechen, Schritte, Mail-Ansicht, Presets ---- */
-h1 .rot { color: var(--signal); display: inline-block; transition: opacity .3s ease, transform .3s ease; }
-h1 .rot.out { opacity: 0; transform: translateY(.18em); }
+h1 .rot-l { display: block; white-space: nowrap; }
+h1 .rot-w { white-space: nowrap; }
+h1 .rot { color: var(--signal); display: inline-block; transition: opacity .28s ease, transform .28s ease; }
+h1 .rot.is-out { opacity: 0; transform: translateY(.22em); }
+h1 .rot.is-in { opacity: 0; transform: translateY(-.22em); transition: none; }
 .btn.wa.big { padding: 1.35rem 2.1rem; font-size: 1.15rem; }
 .actions .btn.wa { padding: 1.05rem 1.5rem; }
 .try { background: linear-gradient(180deg, #0b0c0d, #000); }
@@ -522,6 +525,13 @@ h1 .rot.out { opacity: 0; transform: translateY(.18em); }
 @media (min-width: 900px) { .mailview { grid-template-columns: minmax(0, 1fr) 420px; gap: 4rem; } .mv-copy { position: sticky; top: 6rem; } }
 
 .presets { margin-bottom: 1.4rem; }
+.out .bars { margin: 1.1rem 0 .4rem; display: grid; gap: .6rem; }
+.out .bar { display: grid; grid-template-columns: 7.5rem 1fr auto; align-items: center; gap: .7rem; font: 500 .74rem/1.2 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: #333; }
+.out .bar em { display: block; height: 12px; background: rgba(0,0,0,.08); }
+.out .bar i { display: block; height: 100%; width: 0; background: #6b7278; transition: width .5s cubic-bezier(.2,.7,.2,1); }
+.out .bar.after i { background: var(--signal); }
+.out .bar b { font: 600 .8rem/1 var(--mono); color: #000; min-width: 3.6rem; text-align: right; }
+@media (max-width: 420px) { .out .bar { grid-template-columns: 5.6rem 1fr auto; font-size: .66rem; } }
 @media (max-width: 899px) {
   .tabs { display: grid; grid-template-columns: 1fr 1fr; overflow: visible; margin-inline: 0; padding: 0; -webkit-mask-image: none; mask-image: none; }
   .tab { min-width: 0; max-width: none; padding: .9rem .9rem; }
@@ -572,7 +582,7 @@ h1 .rot.out { opacity: 0; transform: translateY(.18em); }
     <canvas id="hive" aria-hidden="true"></canvas>
     <div class="wrap">
       <div class="copy">
-        <h1 id="titel">Deine Halle antwortet immer.<br>Auch <span class="rot" id="rot">nachts</span>.</h1>
+        <h1 id="titel">Deine Halle antwortet immer.<br><span class="rot-l">Auch <span class="rot-w"><span class="rot" id="rot">nachts</span>.</span></span></h1>
         <p class="lead">CourtDesk ist der WhatsApp-Assistent für Padel-, Tennis- und Pickleballanlagen. Er beantwortet Standardfragen rund um die Uhr, nimmt Firmenfitness-Anmeldungen von Wellpass und Hansefit/Epassi entgegen und bereitet sie für den Import in Playtomic vor. Dein Team hat wieder Zeit für die Spieler vor Ort.</p>
         <div class="actions">
           <a class="btn wa" href="https://wa.me/4915216409156?text=Hallo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" class="wa-i"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.4-.2Z"/></svg>Paola jetzt auf WhatsApp testen</a>
@@ -874,6 +884,10 @@ Antwort per WhatsApp an +49 171 …</pre>
           <p class="big" id="r-h">0</p>
           <p class="unit">Stunden pro Monat zurück</p>
           <p class="split" id="r-split"></p>
+          <div class="bars" aria-hidden="true">
+            <div class="bar"><span>Heute</span><em><i id="b-now"></i></em><b id="b-now-t"></b></div>
+            <div class="bar after"><span>Mit CourtDesk</span><em><i id="b-with"></i></em><b id="b-with-t"></b></div>
+          </div>
           <p class="days" id="r-d"></p>
           <p class="eur" id="r-e">0 €</p>
           <p class="extra">Dazu kommt, was der Rechner nicht zählt: Antworten nachts und am Wochenende, und keine Anmeldung bleibt liegen.</p>
@@ -1169,10 +1183,14 @@ Antwort per WhatsApp an +49 171 …</pre>
   // Wechselndes Wort in der Überschrift (Grundtext "nachts" bleibt für Suchmaschinen stehen)
   var rot = document.getElementById('rot');
   if (rot && !reduce) {
-    var words = ['nachts', 'sonntags', 'an Feiertagen', 'im Urlaub', 'wenn du Training gibst'], wi = 0;
+    var words = ['nachts', 'sonntags', 'im Urlaub', 'am Feiertag', 'beim Training'], wi = 0;
     setInterval(function () {
-      rot.classList.add('out');
-      setTimeout(function () { wi = (wi + 1) % words.length; rot.textContent = words[wi]; rot.classList.remove('out'); }, 320);
+      rot.classList.add('is-out');
+      setTimeout(function () {
+        wi = (wi + 1) % words.length; rot.textContent = words[wi];
+        rot.classList.remove('is-out'); rot.classList.add('is-in');
+        void rot.offsetWidth; rot.classList.remove('is-in');
+      }, 290);
     }, 2800);
   }
 
@@ -1218,6 +1236,20 @@ Antwort per WhatsApp an +49 171 …</pre>
   });
   roleBtns.forEach(function (b) { b.setAttribute('aria-pressed', +b.getAttribute('data-eur') === eur ? 'true' : 'false'); });
   }
+  var cntRaf = 0;
+  function countTo(el, to) {
+    var from = parseInt(el.getAttribute('data-v') || '0', 10);
+    el.setAttribute('data-v', to);
+    if (reduce || from === to) { el.textContent = fmt(to, 0); return; }
+    cancelAnimationFrame(cntRaf);
+    var t0 = null, dur = 450;
+    (function step(t) {
+      if (t0 === null) t0 = t;
+      var k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+      el.textContent = fmt(Math.round(from + (to - from) * e), 0);
+      if (k < 1) cntRaf = requestAnimationFrame(step);
+    })(performance.now());
+  }
   function calc() {
     var anm = +$('c-anm').value, ma = +$('c-ma').value, fra = +$('c-fra').value, mf = +$('c-mf').value, eur = +$('c-eur').value;
     $('o-anm').textContent = anm;
@@ -1230,7 +1262,12 @@ Antwort per WhatsApp an +49 171 …</pre>
     var h = hours(anm, ma, fra, mf);
     var year = h.t * 12, days = year / 8;
     var ht = Math.round(h.t), fr = Math.round(h.f), an = ht - fr;
-    $('r-h').textContent = fmt(ht, 0);
+    var before = anm * 4.33 * ma / 60 + fra * 30 * mf / 60, withCd = Math.max(0, before - h.t);
+    $('b-now').style.width = '100%';
+    $('b-with').style.width = (before > 0 ? Math.max(4, withCd / before * 100) : 0) + '%';
+    $('b-now-t').textContent = fmt(Math.round(before), 0) + ' Std.';
+    $('b-with-t').textContent = fmt(Math.round(withCd), 0) + ' Std.';
+    countTo($('r-h'), ht);
     $('r-split').textContent = 'davon ca. ' + fmt(an, 0) + ' Std. Anmeldungen und ca. ' + fmt(fr, 0) + ' Std. Fragen';
     $('r-d').textContent = 'Das sind rund ' + fmt(Math.round(days), 0) + ' Arbeitstage im Jahr';
     $('r-e').textContent = 'ca. ' + fmt(ht * eur, 0) + ' € pro Monat, ' + fmt(Math.round(year * eur / 100) * 100, 0) + ' € im Jahr';
