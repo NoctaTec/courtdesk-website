@@ -120,7 +120,7 @@ def page(slug, title, desc, crumb, body, faq, parent=True):
 </div>
 <p class="muted tm">{TM}</p>
 </div></main>
-<footer><div class="wrap"><a href="/">courtdesk.de</a><a href="/firmenfitness-automatisierung/">Firmenfitness</a><a href="/egym-wellpass-playtomic/">Wellpass</a><a href="/hansefit-epassi-playtomic/">Hansefit</a><a href="/firmenfitness-automatisierung/#ratgeber">Ratgeber</a><a href="/#impressum">Impressum</a><a href="/datenschutz.html">Datenschutz</a></div></footer>
+<footer><div class="wrap"><a href="/">courtdesk.de</a><a href="/firmenfitness-automatisierung/">Firmenfitness</a><a href="/egym-wellpass-playtomic/">Wellpass</a><a href="/hansefit-epassi-playtomic/">Hansefit</a><a href="/whatsapp-assistent-padelhalle/">WhatsApp-Assistent</a><a href="/firmenfitness-automatisierung/#ratgeber">Ratgeber</a><a href="/#impressum">Impressum</a><a href="/datenschutz.html">Datenschutz</a></div></footer>
 {ZAEHLER}
 </body>
 </html>
@@ -183,12 +183,16 @@ page(
   <a href="/anlage-ohne-empfang/"><b>Anlage ohne Empfang</b><span>Wenn niemand am Tresen steht: wie Anmeldungen trotzdem vollständig ankommen.</span></a>
   <a href="/checkliste-firmenfitness/"><b>Checkliste Firmenfitness</b><span>Was in Playtomic, auf der Anlage und in der Kommunikation stehen sollte, bevor die ersten Mitglieder kommen.</span></a>
   <a href="/software-padelhalle/"><b>Software für Padelhallen</b><span>Buchung, Zutritt, Firmenfitness: welches Werkzeug welche Aufgabe übernimmt.</span></a>
+  <a href="/whatsapp-assistent-padelhalle/"><b>WhatsApp-Assistent</b><span>Anmeldung, Fragen und Übergabe an dein Team: was Paola übernimmt und was nicht.</span></a>
+  <a href="/spielerfragen-automatisch-beantworten/"><b>Spielerfragen beantworten</b><span>Öffnungszeiten, Parken, Leihschläger: die immer gleichen Fragen, rund um die Uhr beantwortet.</span></a>
+  <a href="/zeitersparnis-firmenfitness-padelhalle/"><b>Beispielrechnung Zeitersparnis</b><span>Von 3 Minuten Handarbeit auf rund 20 Sekunden: der Rechenweg hinter „bis zu 90 %“.</span></a>
+  <a href="/wellpass-hansefit-anmeldung-fehler/"><b>Typische Fehler bei der Anmeldung</b><span>Falsche E-Mail, Zahlendreher, falsche Kategorie: was bei der Registrierung hakt und was hilft.</span></a>
 </div>""",
     [
         ("Brauchen wir dafür Personal am Empfang?",
          "Für Anmeldungen und Standardfragen nicht, beides läuft im Chat. Einmal am Tag lädt jemand die Importdatei in Playtomic hoch. Das geht auch vom Schreibtisch oder von zu Hause."),
         ("Ist CourtDesk direkt mit Playtomic verbunden?",
-         "Nein. CourtDesk erstellt eine Datei für den Kundenimport von Playtomic. Gebucht wird weiter in Playtomic. Freie Plätze zeigt der Assistent aus den öffentlich sichtbaren Zeiten deiner Anlage und verlinkt zur Buchung."),
+         "Nein. CourtDesk erstellt eine Datei für den Kundenimport von Playtomic. Gebucht wird weiter in Playtomic. Freie Plätze zeigt der Assistent nicht an. Er verlinkt auf die Buchungsseite deiner Anlage in Playtomic."),
         ("Wie läuft die Zuzahlung?",
          "CourtDesk wickelt keine Zahlungen ab. Der Rabatt hängt in Playtomic an der Kategorie, die mit dem Import gesetzt wird. Der Assistent erklärt Spielern vorab, welcher Rabatt für sie gilt und was sie dafür tun müssen."),
         ("Was passiert beim Check-in?",
@@ -285,4 +289,5 @@ page(
     ],
 )
 exec(open(os.path.join(HERE, "ratgeber.py")).read())
+exec(open(os.path.join(HERE, "seo_seiten.py")).read())
 print("gebaut")

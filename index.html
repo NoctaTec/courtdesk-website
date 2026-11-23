@@ -128,6 +128,13 @@
   /* Abschnitte */
   section { padding-block: clamp(3.5rem, 8vw, 6.5rem); scroll-margin-top: 4rem; border-bottom: 1px solid var(--rule); }
   section.graphite { background: var(--graphite); }
+  .gal-full { margin: 2rem 0 2.2rem; }
+  .gal-full img, .gal img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); background: #000; }
+  .gal { display: flex; gap: 1.4rem; overflow-x: auto; scroll-snap-type: x mandatory; padding: 0 0 1.2rem; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: var(--steel) transparent; }
+  .gal figure { flex: 0 0 min(86%, 420px); margin: 0; scroll-snap-align: start; }
+  .gal figcaption { margin-top: .9rem; font-size: .95rem; line-height: 1.5; color: var(--ink); max-width: 44ch; }
+  .gal figcaption b { display: block; margin-bottom: .25rem; font: 500 .76rem/1.3 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--signal); }
+  .gal:focus-visible { outline: 2px solid var(--signal); outline-offset: 4px; }
   h2 { margin: 0 0 2rem; font: 800 clamp(1.9rem, 4.4vw, 3.2rem)/1.02 var(--head); letter-spacing: -.01em; text-transform: uppercase; color: var(--white); max-width: 22ch; text-wrap: balance; }
   h3 { margin: 0 0 .7rem; font: 700 1.35rem/1.1 var(--head); letter-spacing: .02em; text-transform: uppercase; color: var(--white); }
 
@@ -494,14 +501,14 @@ footer .flinks a:hover { color: var(--white); }
     <canvas id="hive" aria-hidden="true"></canvas>
     <div class="wrap">
       <div class="copy">
-        <h1 id="titel">Weniger Tipparbeit. Mehr Zeit für deine Anlage.</h1>
+        <h1 id="titel">Deine Halle antwortet immer. Auch nachts.</h1>
         <p class="lead">CourtDesk ist der WhatsApp-Assistent für Padel-, Tennis- und Pickleballanlagen. Er beantwortet Standardfragen rund um die Uhr, nimmt Firmenfitness-Anmeldungen von Wellpass und Hansefit/Epassi entgegen und bereitet sie für den Import in Playtomic vor. Dein Team hat wieder Zeit für die Spieler vor Ort.</p>
         <div class="actions">
           <a class="btn" href="#kontakt" data-interest="15-Minuten-Gespräch">15-Minuten-Gespräch</a>
           <a class="textlink" href="#video">Demo-Video ansehen</a>
           <a class="textlink" href="#rechner">Ersparnis berechnen</a>
         </div>
-        <p class="save"><b id="hero-h">ca. 10 Stunden pro Monat</b><span id="hero-e">rund 450 € Arbeitszeit</span> gewinnt eine Anlage in unserer Beispielrechnung zurück, bei 15 Anmeldungen pro Woche und 10 Fragen am Tag. <a href="#rechner">Mit deinen Zahlen rechnen</a></p>
+        <p class="save"><b id="hero-h">bis zu 10 Stunden pro Monat</b><span id="hero-e">und rund 450 € Arbeitszeit</span> gewinnt eine Anlage in unserer Beispielrechnung zurück, bei 15 Anmeldungen pro Woche und 10 Fragen am Tag. <a href="#rechner">Mit deinen Zahlen rechnen</a></p>
       </div>
 
       <div class="frame-wrap">
@@ -545,7 +552,7 @@ footer .flinks a:hover { color: var(--white); }
             <span class="chip">Playtomic-Import bereit</span>
           </div>
           <span class="scan" aria-hidden="true"></span>
-          <p class="tag">Platz 3 · Demo-Club · 20 × 10 m</p>
+          <p class="tag">Platz 3 · Beispielanlage · 20 × 10 m</p>
         </div>
       </div>
     </div>
@@ -566,7 +573,7 @@ footer .flinks a:hover { color: var(--white); }
       <div>
         <p class="status">Echte Aufnahme vom Handy</p>
         <h2 id="video-titel">So fühlt es sich für deine Spieler an</h2>
-        <p class="sub" style="margin-bottom:0">Knapp eine Minute, ohne Ton. Ein Spieler meldet sich per WhatsApp für Wellpass an und fragt danach nach dem Preis. Der Demo-Club ist keine echte Anlage.</p>
+        <p class="sub" style="margin-bottom:0">Knapp eine Minute, ohne Ton. Ein Spieler meldet sich per WhatsApp für Wellpass an und fragt danach nach dem Preis. Die Anlage im Video ist eine Beispielanlage.</p>
         <ul class="vlist">
           <li><b>01</b>Begrüßung und Auswahl des Anbieters per Knopfdruck</li>
           <li><b>02</b>Name, E-Mail und TAN direkt im Chat, mit Prüfung</li>
@@ -585,7 +592,7 @@ footer .flinks a:hover { color: var(--white); }
         <div class="live">
           <div class="live-cta">
             <a class="btn wa" href="https://wa.me/4915216409156?text=Hallo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" class="wa-i"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.4-.2Z"/></svg>Jetzt live auf WhatsApp testen</a>
-            <p class="live-hint">Demo-Anlage, ca. 12 Nachrichten pro Nummer</p>
+            <p class="live-hint">Zum Ausprobieren, ca. 12 Nachrichten pro Nummer</p>
           </div>
           <figure class="live-qr"><svg class="qr" viewBox="0 0 33 33" width="132" height="132" role="img" aria-label="QR-Code zur WhatsApp-Demo" shape-rendering="crispEdges"><rect width="33" height="33" fill="#fff"/><path fill="#000" d="M2 2h7v1h-7zM13 2h3v1h-3zM18 2h1v1h-1zM21 2h1v1h-1zM24 2h7v1h-7zM2 3h1v1h-1zM8 3h1v1h-1zM16 3h2v1h-2zM20 3h1v1h-1zM24 3h1v1h-1zM30 3h1v1h-1zM2 4h1v1h-1zM4 4h3v1h-3zM8 4h1v1h-1zM10 4h1v1h-1zM12 4h3v1h-3zM17 4h2v1h-2zM20 4h1v1h-1zM22 4h1v1h-1zM24 4h1v1h-1zM26 4h3v1h-3zM30 4h1v1h-1zM2 5h1v1h-1zM4 5h3v1h-3zM8 5h1v1h-1zM10 5h1v1h-1zM12 5h2v1h-2zM15 5h2v1h-2zM19 5h2v1h-2zM22 5h1v1h-1zM24 5h1v1h-1zM26 5h3v1h-3zM30 5h1v1h-1zM2 6h1v1h-1zM4 6h3v1h-3zM8 6h1v1h-1zM10 6h6v1h-6zM18 6h2v1h-2zM21 6h1v1h-1zM24 6h1v1h-1zM26 6h3v1h-3zM30 6h1v1h-1zM2 7h1v1h-1zM8 7h1v1h-1zM10 7h1v1h-1zM12 7h2v1h-2zM15 7h4v1h-4zM20 7h1v1h-1zM24 7h1v1h-1zM30 7h1v1h-1zM2 8h7v1h-7zM10 8h1v1h-1zM12 8h1v1h-1zM14 8h1v1h-1zM16 8h1v1h-1zM18 8h1v1h-1zM20 8h1v1h-1zM22 8h1v1h-1zM24 8h7v1h-7zM10 9h1v1h-1zM12 9h1v1h-1zM16 9h2v1h-2zM21 9h2v1h-2zM2 10h1v1h-1zM4 10h5v1h-5zM12 10h2v1h-2zM17 10h1v1h-1zM19 10h2v1h-2zM22 10h1v1h-1zM24 10h5v1h-5zM2 11h6v1h-6zM9 11h1v1h-1zM11 11h5v1h-5zM18 11h1v1h-1zM21 11h1v1h-1zM23 11h4v1h-4zM30 11h1v1h-1zM2 12h3v1h-3zM8 12h1v1h-1zM10 12h2v1h-2zM13 12h1v1h-1zM15 12h3v1h-3zM20 12h1v1h-1zM22 12h1v1h-1zM25 12h2v1h-2zM4 13h2v1h-2zM7 13h1v1h-1zM9 13h1v1h-1zM12 13h2v1h-2zM15 13h1v1h-1zM17 13h1v1h-1zM25 13h1v1h-1zM27 13h1v1h-1zM29 13h1v1h-1zM3 14h1v1h-1zM6 14h1v1h-1zM8 14h3v1h-3zM12 14h2v1h-2zM16 14h1v1h-1zM19 14h2v1h-2zM22 14h2v1h-2zM27 14h2v1h-2zM4 15h1v1h-1zM7 15h1v1h-1zM9 15h1v1h-1zM14 15h1v1h-1zM17 15h2v1h-2zM21 15h1v1h-1zM23 15h4v1h-4zM30 15h1v1h-1zM5 16h2v1h-2zM8 16h1v1h-1zM10 16h5v1h-5zM17 16h2v1h-2zM24 16h1v1h-1zM27 16h2v1h-2zM2 17h1v1h-1zM5 17h2v1h-2zM9 17h2v1h-2zM16 17h3v1h-3zM21 17h1v1h-1zM24 17h2v1h-2zM29 17h1v1h-1zM4 18h3v1h-3zM8 18h1v1h-1zM11 18h4v1h-4zM18 18h3v1h-3zM22 18h2v1h-2zM27 18h2v1h-2zM2 19h2v1h-2zM5 19h2v1h-2zM9 19h1v1h-1zM11 19h1v1h-1zM15 19h2v1h-2zM21 19h1v1h-1zM24 19h1v1h-1zM26 19h1v1h-1zM28 19h1v1h-1zM30 19h1v1h-1zM2 20h1v1h-1zM5 20h1v1h-1zM8 20h2v1h-2zM11 20h1v1h-1zM15 20h3v1h-3zM19 20h1v1h-1zM22 20h1v1h-1zM25 20h2v1h-2zM28 20h1v1h-1zM2 21h1v1h-1zM6 21h1v1h-1zM11 21h2v1h-2zM15 21h1v1h-1zM17 21h2v1h-2zM20 21h1v1h-1zM22 21h2v1h-2zM26 21h1v1h-1zM29 21h1v1h-1zM2 22h1v1h-1zM4 22h2v1h-2zM8 22h2v1h-2zM13 22h1v1h-1zM16 22h5v1h-5zM22 22h5v1h-5zM28 22h3v1h-3zM10 23h2v1h-2zM14 23h1v1h-1zM18 23h2v1h-2zM21 23h2v1h-2zM26 23h5v1h-5zM2 24h7v1h-7zM13 24h2v1h-2zM17 24h1v1h-1zM19 24h1v1h-1zM21 24h2v1h-2zM24 24h1v1h-1zM26 24h3v1h-3zM2 25h1v1h-1zM8 25h1v1h-1zM10 25h1v1h-1zM13 25h2v1h-2zM16 25h2v1h-2zM22 25h1v1h-1zM26 25h1v1h-1zM29 25h2v1h-2zM2 26h1v1h-1zM4 26h3v1h-3zM8 26h1v1h-1zM10 26h1v1h-1zM13 26h2v1h-2zM18 26h2v1h-2zM22 26h5v1h-5zM28 26h1v1h-1zM2 27h1v1h-1zM4 27h3v1h-3zM8 27h1v1h-1zM10 27h4v1h-4zM15 27h2v1h-2zM18 27h1v1h-1zM21 27h1v1h-1zM23 27h1v1h-1zM27 27h4v1h-4zM2 28h1v1h-1zM4 28h3v1h-3zM8 28h1v1h-1zM10 28h4v1h-4zM16 28h3v1h-3zM24 28h6v1h-6zM2 29h1v1h-1zM8 29h1v1h-1zM14 29h1v1h-1zM16 29h3v1h-3zM20 29h6v1h-6zM27 29h1v1h-1zM29 29h1v1h-1zM2 30h7v1h-7zM10 30h1v1h-1zM12 30h1v1h-1zM15 30h3v1h-3zM19 30h1v1h-1zM25 30h4v1h-4z"/></svg><figcaption>Mit dem Handy scannen</figcaption></figure>
         </div>
@@ -664,7 +671,7 @@ footer .flinks a:hover { color: var(--white); }
 
             <div class="chat" role="tabpanel" id="p1" aria-labelledby="t1" data-benefit="<b>Nutzen für die Anlage:</b> Neue Mitglieder tippen ihre Daten selbst ein. Am Empfang bleibt nur der Import der fertigen Datei.">
               <p class="msg me">Hallo</p>
-              <p class="msg bot">Hey, ich bin Paola, der digitale Assistent vom Demo-Club. Wie kann ich dir heute helfen? 🙂 Wir sind Partner von Wellpass und Hansefit/Epassi. Zur Freischaltung wähl unten deinen Anbieter, oder stell mir direkt eine Frage.</p>
+              <p class="msg bot">Hey, ich bin Paola, deine KI-Assistentin bei der Beispielanlage. Wie kann ich dir heute helfen? 🙂 Wir sind Partner von Wellpass und Hansefit/Epassi. Zur Freischaltung wähl unten deinen Anbieter, oder stell mir direkt eine Frage.</p>
               <div class="quick" data-pick="0" aria-hidden="true"><span>Wellpass</span><span>Hansefit/Epassi</span><span>Frage stellen</span></div>
               <p class="msg me">Wellpass</p>
               <p class="msg bot">Super! Schick mir jetzt in einer Nachricht deinen Vor- und Nachnamen und die E-Mail deines Playtomic-Kontos.</p>
@@ -720,10 +727,34 @@ Antwort per WhatsApp an +49 171 …</pre>
     </div>
   </section>
 
+  <section id="einblick" aria-labelledby="einblick-titel">
+    <div class="wrap">
+      <h2 id="einblick-titel">So sieht das bei dir aus.</h2>
+      <p class="sub">Ansichten mit Musterdaten, gestaltet wie die Nachrichten und E-Mails, die deine Anlage bekommt.</p>
+      <figure class="gal-full">
+        <img src="/bilder/ablauf.webp" width="1100" height="442" loading="lazy" decoding="async" alt="Der Ablauf in vier Schritten: Spieler schreibt per WhatsApp, Paola sammelt die Angaben, die Anlage bekommt täglich eine Mail mit Importdatei, Import in Playtomic.">
+      </figure>
+      <div class="gal" role="region" aria-label="Beispielansichten, seitlich wischen" tabindex="0">
+        <figure>
+          <img src="/bilder/chat-anmeldung.webp" width="560" height="909" loading="lazy" decoding="async" alt="WhatsApp-Chat mit Paola: Anbieter wählen, Name und E-Mail bestätigen, TAN eingeben, Anmeldung abgeschlossen.">
+          <figcaption><b>Die Anmeldung im Chat</b>Anbieter wählen, Angaben prüfen, TAN eintragen. Das Format wird sofort kontrolliert.</figcaption>
+        </figure>
+        <figure>
+          <img src="/bilder/import-mail.webp" width="560" height="657" loading="lazy" decoding="async" alt="E-Mail an die Anlage mit vier neuen Anmeldungen als Tabelle aus Name, Anbieter und TAN sowie der Importdatei als CSV-Anhang.">
+          <figcaption><b>Die tägliche Importdatei</b>Neue Anmeldungen mit TAN-Liste und CSV im Anhang, bereit für den Import in Playtomic.</figcaption>
+        </figure>
+        <figure>
+          <img src="/bilder/ticket-mail.webp" width="560" height="1150" loading="lazy" decoding="async" alt="Ticket-Mail an die Anlage: Anliegen, Dringlichkeit, To-do, Einschätzung, Kontaktdaten mit Antwortknöpfen für E-Mail und WhatsApp sowie der Gesprächsverlauf.">
+          <figcaption><b>Wenn ein Mensch gefragt ist</b>Ticket mit Anliegen, Dringlichkeit und To-do. Antworten geht per E-Mail oder WhatsApp, schon vorausgefüllt.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
   <section id="rechner" aria-labelledby="rechner-titel">
     <div class="wrap">
       <h2 id="rechner-titel">Wie viel Zeit bekommst du zurück?</h2>
-      <p class="sub">Stell die Regler auf deine Anlage. Die Rechnung nimmt an, dass CourtDesk 90 % der Anmeldungen und 70 % der Fragen abnimmt.</p>
+      <p class="sub">Stell die Regler auf deine Anlage. Beispielrechnung: Aus etwa 3 Minuten Handarbeit pro Anmeldung werden rund 20 Sekunden Import, das sind bis zu 90 % weniger Aufwand. Bei Spielerfragen rechnen wir mit bis zu 70 %, die der Assistent allein beantwortet.</p>
       <div class="calc">
         <div>
           <fieldset class="role" id="role">
@@ -738,6 +769,7 @@ Antwort per WhatsApp an +49 171 …</pre>
           <div class="ctl"><label for="c-eur">Was dich eine Stunde kostet <output id="o-eur" for="c-eur"></output></label><input id="c-eur" type="range" min="14" max="100" step="1" value="45"></div>
         </div>
         <div class="out" aria-live="polite">
+          <p class="upto" style="margin:0 0 .5rem;font:500 .74rem/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--steel)">bis zu</p>
           <p class="big" id="r-h">0</p>
           <p class="unit">Stunden pro Monat zurück</p>
           <p class="split" id="r-split"></p>
@@ -762,7 +794,7 @@ Antwort per WhatsApp an +49 171 …</pre>
             <li>Antworten auf Standardfragen aus den Infos deiner Anlage</li>
             <li>Persönliche Antwort zu Rabatt und Check-in je nach Mitgliedschaft</li>
             <li>Antworten in der Sprache des Spielers</li>
-            <li>Übergabe an dein Team bei Sonderfällen</li>
+            <li>Übergabe an dein Team bei Sonderfällen, mit Ticketnummer und Mail samt Zusammenfassung, Kontaktdaten und vorausgefüllter Antwort per E-Mail oder WhatsApp</li>
             <li>Täglicher Versand der Importdatei für Playtomic mit TAN-Liste</li>
           </ul>
         </div>
@@ -770,6 +802,7 @@ Antwort per WhatsApp an +49 171 …</pre>
           <h3>In Entwicklung</h3>
           <ul>
             <li>Auswertung für deine Anlage mit Anmeldungen, häufigsten Fragen und gesparter Zeit</li>
+            <li>Gesprächsverlauf mit Paolas Antworten direkt im Ticket</li>
           </ul>
         </div>
       </div>
@@ -821,7 +854,7 @@ Antwort per WhatsApp an +49 171 …</pre>
         <div class="live live-contact">
           <div class="live-cta">
             <a class="btn wa" href="https://wa.me/4915216409156?text=Hallo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" class="wa-i"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.4-.2Z"/></svg>Jetzt live auf WhatsApp testen</a>
-            <p class="live-hint">Demo-Anlage, ca. 12 Nachrichten pro Nummer</p>
+            <p class="live-hint">Zum Ausprobieren, ca. 12 Nachrichten pro Nummer</p>
           </div>
         </div>
       </div>
@@ -1081,7 +1114,7 @@ Antwort per WhatsApp an +49 171 …</pre>
   ['c-anm', 'c-ma', 'c-fra', 'c-mf', 'c-eur'].forEach(function (id) { $(id).addEventListener('input', calc); });
   calc();
   var hh = hours(15, 3, 10, 2).t;
-  $('hero-h').textContent = 'ca. ' + fmt(Math.round(hh), 0) + ' Stunden pro Monat';
+  $('hero-h').textContent = 'bis zu ' + fmt(Math.round(hh), 0) + ' Stunden pro Monat';
   $('hero-e').textContent = 'und rund ' + fmt(Math.round(hh * 45 / 50) * 50, 0) + ' € Arbeitszeit';
 
 
