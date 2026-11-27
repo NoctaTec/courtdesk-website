@@ -290,4 +290,7 @@ page(
 )
 exec(open(os.path.join(HERE, "ratgeber.py")).read())
 exec(open(os.path.join(HERE, "seo_seiten.py")).read())
+# SEO-Pflege: lastmod in sitemap.xml, llms.txt, robots.txt (Regel im Hub, seit 27.11.2026)
+import subprocess
+subprocess.run([sys.executable, os.path.join(HERE, "seo_pflege.py")], cwd=ROOT, check=False)
 print("gebaut")
