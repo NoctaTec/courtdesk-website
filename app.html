@@ -29,7 +29,11 @@
 <script>
 (function () {
   var ua = navigator.userAgent || '', ios = /iPhone|iPad|iPod/i.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-  if (ios) { location.replace('https://apps.apple.com/app/id1242321076'); } else if (/Android/i.test(ua)) { location.replace('https://play.google.com/store/apps/details?id=com.playtomic'); }
+  var ziel = ios ? ['https://apps.apple.com/app/id1242321076', 'App Store automatisch'] : /Android/i.test(ua) ? ['https://play.google.com/store/apps/details?id=com.playtomic', 'Google Play automatisch'] : null;
+  if (!ziel) return;
+  // Zählen vor der Weiterleitung: nur Tagessumme je Store, keine Kennung (siehe Datenschutz)
+  try { if (navigator.sendBeacon && navigator.doNotTrack !== '1' && window.doNotTrack !== '1') navigator.sendBeacon('/z/e', JSON.stringify({ k: 'e', e: 'Externer Link', l: ziel[1], p: '/app' })); } catch (e) {}
+  location.replace(ziel[0]);
 })();
 </script>
 <style>
