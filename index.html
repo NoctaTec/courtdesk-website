@@ -609,6 +609,30 @@ h1 .rot.nx { position: absolute; left: 0; top: 0; }
 @media (min-width: 1900px) { html { font-size: 125%; } }
 @media (min-width: 2200px) { html { font-size: 150%; } }
 @media (min-width: 2800px) { html { font-size: 175%; } }
+
+  /* Logo-Leiste „Funktioniert mit“ (28.11.) */
+  .marken-liste { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 1.6rem 3.4rem; }
+  .marken-liste li { margin: 0; }
+  .provs .marken-liste li a { padding: 0; border: 0; background: none; }
+  .provs .marken-liste .m-whatsapp a { padding: .45rem .9rem; border: 1px solid var(--rule); font-size: .95rem; }
+  .provs .wrap { gap: 1.2rem 2.6rem; } .provs { padding-block: 2rem; }
+  .provs ul.marken-liste { gap: 1.4rem 3rem; align-items: center; }
+  @media (max-width: 699px) { .provs ul.marken-liste { gap: 1.1rem 1.8rem; } }
+  .marken-liste img { display: block; height: 30px; width: auto; opacity: .85; transition: opacity .2s; }
+  .marken-liste .m-hansefit img { height: 50px; }
+  .marken-liste .m-epassi img { height: 28px; }
+  .marken-liste a:hover img { opacity: 1; }
+  @media (max-width: 699px) { .marken-liste { gap: 1.2rem 2rem; } .marken-liste img { height: 22px; } .marken-liste .m-hansefit img { height: 38px; } .marken-liste .m-epassi img { height: 20px; } }
+
+  /* Logos im Footer (Marken) */
+  .fmarken { display: flex; flex-wrap: wrap; align-items: center; gap: .8rem 1.8rem; width: 100%; margin: 1.4rem 0 0; padding-top: 1.2rem; border-top: 1px solid var(--rule); }
+  .fmarken > span { font: 500 .7rem/1.4 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--steel); }
+  .fmarken ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: .9rem 1.8rem; }
+  .fmarken li { margin: 0; max-width: none; }
+  .fmarken img { display: block; height: 20px; width: auto; opacity: .55; transition: opacity .2s; }
+  .fmarken .m-hansefit img { height: 32px; }
+  .fmarken a:hover img { opacity: 1; }
+  .fmarken .fm-hinweis { text-transform: none; letter-spacing: 0; font: 400 .72rem/1.4 var(--sans); }
 </style>
 </head>
 <body>
@@ -678,13 +702,7 @@ h1 .rot.nx { position: absolute; left: 0; top: 0; }
   <div class="provs" aria-label="Unterstützte Programme und Systeme">
     <div class="wrap">
       <p class="provs-l">Funktioniert mit</p>
-      <ul>
-        <li><a href="/egym-wellpass-playtomic/">Wellpass</a></li>
-        <li><a href="/hansefit-epassi-playtomic/">Hansefit</a></li>
-        <li><a href="/hansefit-epassi-playtomic/">Epassi</a></li>
-        <li><a href="/playtomic-kundenimport/">Playtomic</a></li>
-        <li><a href="/whatsapp-assistent-padelhalle/">WhatsApp</a></li>
-      </ul>
+      <ul class="marken-liste"><li class="m-playtomic"><a href="/playtomic-kundenimport/"><img src="/bilder/logos/playtomic-weiss.png" alt="Playtomic" width="366" height="79" loading="lazy"></a></li><li class="m-wellpass"><a href="/egym-wellpass-playtomic/"><img src="/bilder/logos/egym-wellpass-weiss.png" alt="EGYM Wellpass" width="414" height="107" loading="lazy"></a></li><li class="m-hansefit"><a href="/hansefit-epassi-playtomic/"><img src="/bilder/logos/hansefit-weiss.png" alt="Hansefit" width="541" height="327" loading="lazy"></a></li><li class="m-epassi"><a href="/hansefit-epassi-playtomic/"><img src="/bilder/logos/epassi-weiss.png" alt="Epassi" width="800" height="198" loading="lazy"></a></li><li class="m-whatsapp"><a href="/whatsapp-assistent-padelhalle/">WhatsApp</a></li></ul>
       <p class="provs-n">Namen sind Marken ihrer Inhaber. CourtDesk ist ein unabhängiges Produkt und nicht mit ihnen verbunden. Wir arbeiten neben diesen Systemen und binden sie über Chat, Importdatei und Links an.</p>
     </div>
   </div>
@@ -1067,6 +1085,7 @@ Antwort per WhatsApp an +49 171 …</pre>
     <p class="flinks"><a href="/firmenfitness-automatisierung/">Firmenfitness</a> <a href="/egym-wellpass-playtomic/">EGYM Wellpass</a> <a href="/hansefit-epassi-playtomic/">Hansefit/Epassi</a> <a href="/ticketsystem-padelhalle/">Ticketsystem</a> <a href="/roadmap/">Roadmap</a> <a href="/firmenfitness-automatisierung/#ratgeber">Ratgeber</a> <a href="/datenschutz.html">Datenschutz</a></p>
 
     <div class="group-strip"><a class="gs-main" href="https://vespasian-group.de">Ein Bereich der Vespasian Group <span aria-hidden="true">→</span></a><span class="gs-links"><a href="https://www.vespasian-immobilien.de">Vespasian Immobilien</a><a href="https://vespasian-advisory.de">Vespasian Advisory</a><a href="https://vespasian-invest.de">Vespasian Invest</a><a href="https://www.noctatec.de">NoctaTec</a></span></div>
+    <div class="fmarken"><span>Funktioniert mit</span><ul><li class="m-playtomic"><a href="/playtomic-kundenimport/"><img src="/bilder/logos/playtomic-weiss.png" alt="Playtomic" width="366" height="79" loading="lazy"></a></li><li class="m-wellpass"><a href="/egym-wellpass-playtomic/"><img src="/bilder/logos/egym-wellpass-weiss.png" alt="EGYM Wellpass" width="414" height="107" loading="lazy"></a></li><li class="m-hansefit"><a href="/hansefit-epassi-playtomic/"><img src="/bilder/logos/hansefit-weiss.png" alt="Hansefit" width="541" height="327" loading="lazy"></a></li><li class="m-epassi"><a href="/hansefit-epassi-playtomic/"><img src="/bilder/logos/epassi-weiss.png" alt="Epassi" width="800" height="198" loading="lazy"></a></li></ul><span class="fm-hinweis">Marken ihrer jeweiligen Inhaber. Keine offizielle Partnerschaft.</span></div>
     <p class="tm">© 2026 NoctaTec und CourtDesk sind Marken der TF Vespasian Vermögensverwaltungs-GmbH. CourtDesk ist ein Produkt von NoctaTec. WhatsApp, Wellpass, Hansefit, Epassi und Playtomic sind Marken ihrer jeweiligen Inhaber. CourtDesk steht in keiner Verbindung zu diesen Unternehmen und wird nicht von ihnen gefördert.</p>
   </div>
 </footer>
