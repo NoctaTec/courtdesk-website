@@ -124,6 +124,19 @@
   .fmarken .m-hansefit img { height: 32px; }
   .fmarken a:hover img { opacity: 1; }
   .fmarken .fm-hinweis { text-transform: none; letter-spacing: 0; font: 400 .72rem/1.4 var(--sans); }
+
+  /* Logo-Leiste oben (28.11. Nachmittag): sichtbar im ersten Bildschirm */
+  .hmarken { display: flex; flex-wrap: wrap; align-items: center; gap: .9rem 2.2rem; margin: 2rem 0 0; }
+  .hmarken > span { font: 500 .72rem/1.4 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--steel); }
+  .hmarken ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 2.2rem; }
+  .hmarken li { margin: 0; max-width: none; }
+  .hmarken a { display: block; padding: 0; border: 0; background: none; }
+  .hmarken img { display: block; height: 24px; width: auto; opacity: .95; transition: opacity .2s; }
+  .hmarken .m-wellpass img { height: 28px; } .hmarken .m-hansefit img { height: 40px; } .hmarken .m-epassi img { height: 22px; }
+  .hmarken a:hover img { opacity: 1; }
+  .hmarken .hm-off { flex: 1 1 100%; margin: 0; font: 400 .78rem/1.5 var(--sans); color: var(--steel); }
+  .hmarken .hm-off a { display: inline; color: inherit; text-decoration: underline; }
+  @media (max-width: 699px) { .hmarken { gap: .7rem 1.4rem; } .hmarken ul { gap: .9rem 1.5rem; } .hmarken img { height: 19px; } .hmarken .m-wellpass img { height: 23px; } .hmarken .m-hansefit img { height: 32px; } .hmarken .m-epassi img { height: 18px; } }
 </style>
 </head>
 <body>
@@ -133,6 +146,7 @@
 <p class="status">EGYM Wellpass</p>
 <h1>Wellpass-Anmeldungen, fertig für Playtomic.</h1>
 <p class="lead">Neue Wellpass-Mitglieder melden sich bei deiner Anlage per WhatsApp an, auch nachts und am Wochenende. Bei dir kommen die Daten geprüft und gesammelt an, bereit für den Import.</p>
+<div class="hmarken" aria-label="Funktioniert mit"><span>Funktioniert mit</span><ul><li class="m-playtomic"><a href="/playtomic-kundenimport/"><img src="/bilder/logos/playtomic-weiss.png" alt="Playtomic" width="366" height="79"></a></li><li class="m-wellpass"><a href="/egym-wellpass-playtomic/"><img src="/bilder/logos/egym-wellpass-weiss.png" alt="EGYM Wellpass" width="414" height="107"></a></li><li class="m-hansefit"><a href="/hansefit-epassi-playtomic/"><img src="/bilder/logos/hansefit-weiss.png" alt="Hansefit" width="541" height="327"></a></li><li class="m-epassi"><a href="/hansefit-epassi-playtomic/"><img src="/bilder/logos/epassi-weiss.png" alt="Epassi" width="800" height="198"></a></li></ul><p class="hm-off">Zum Programm selbst: <a href="https://egym-wellpass.com/" target="_blank" rel="noopener">egym-wellpass.com</a></p></div>
 
 <h2>Der Ablauf für Wellpass.</h2>
 <ol class="steps">
